@@ -1,0 +1,28 @@
+{
+  "name": "upload",
+  "version": "31.0.0",
+  "description": "CLI profesional para subir proyectos a GitHub desde Termux",
+  "type": "module",
+  "main": "index.js",
+
+  "bin": {
+    "github-upload": "./index.js"
+  },
+
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.12",
+    "ora": "^8.0.1",
+    "gradient-string": "^2.0.2",
+    "figlet": "^1.7.0"
+  },
+
+  "keywords": ["github", "cli", "termux", "uploader"],
+  "author": "Shadow.xyz",
+  "license": "MIT"
+}
