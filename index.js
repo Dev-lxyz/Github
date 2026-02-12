@@ -98,7 +98,7 @@ const banner = () => {
     branch = 'main';
   }
 
-  const push = ora('🚀 Enviando a GitHub...').start();
+  const push = ora('🚀 Enviando a GitHub...\n\n').start();
   try {
     run(`git push -u origin ${branch}`, true);
     push.succeed(chalk.green('✔ Proyecto subido correctamente 🎉'));
