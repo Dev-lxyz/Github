@@ -1,12 +1,20 @@
 import fs from "fs";
 import { execSync } from "child_process";
+import readline from "readline";
 import chalk from "chalk";
-import inquirer from "inquirer";
 import ora from "ora";
 import gradient from "gradient-string";
 import figlet from "figlet";
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const ask = question =>
+  new Promise(resolve => rl.question(question, ans => resolve(ans)));
 
 const run = (cmd, show = false) => {
   try {
@@ -29,10 +37,7 @@ const banner = () => {
   console.clear();
   console.log(
     gradient(['red', 'blue'])(
-      figlet.textSync('GITHUB UPLOAD', {
-        horizontalLayout: 'default',
-        verticalLayout: 'default'
-      })
+      figlet.textSync('GITHUB UPLOAD')
     )
   );
 };
@@ -40,52 +45,45 @@ const banner = () => {
 (async () => {
   banner();
   console.log(chalk.magentaBright('\n🌱 Iniciando...\n'));
-  await sleep(500);
+  await sleep(400);
 
-  const { folder } = await inquirer.prompt({
-    name: 'folder',
-    message: '📁 Ruta del proyecto:',
-    validate: p => fs.existsSync(p) || '❌ La carpeta no existe'
-  });
+  // 📁 Carpeta
+  const folder = await ask('📁 Ruta del proyecto: ');
+  if (!fs.existsSync(folder)) {
+    console.log(chalk.red('❌ La carpeta no existe'));
+    process.exit(1);
+  }
 
   process.chdir(folder);
 
-  const { repo } = await inquirer.prompt({
-    name: 'repo',
-    message: '🌍 URL del repositorio:',
-    validate: v => v.startsWith('https://github.com/') || 'URL inválida'
-  });
+  // 🌍 Repo
+  const repo = await ask('🌍 URL del repositorio: ');
+  if (!repo.startsWith('https://github.com/')) {
+    console.log(chalk.red('❌ URL inválida'));
+    process.exit(1);
+  }
 
-  const spinner = ora('⚙️ Preparando entorno...').start();
   run(`git config --global --add safe.directory "${folder}"`);
-  spinner.succeed('✅ Entorno listo');
 
   if (!fs.existsSync('.git')) {
-    const s = ora('📂 Inicializando repositorio...').start();
+    console.log(chalk.cyan('📂 Inicializando repositorio...'));
     run('git init');
-    s.succeed('✅ Repositorio inicializado');
   }
 
   if (exists('git remote get-url origin')) {
     run('git remote remove origin');
   }
+
   run(`git remote add origin ${repo}`);
 
-  const addSpin = ora('🌾 Agregando archivos...').start();
+  console.log(chalk.cyan('🌾 Agregando archivos...'));
   run('git add .');
-  addSpin.succeed('✅ Archivos agregados');
 
-  const { msg } = await inquirer.prompt({
-    name: 'msg',
-    message: '📝 Mensaje del commit:',
-    default: 'Auto commit by Shadow CLI'
-  });
-
-  const safeMsg = msg.replace(/"/g, '\\"');
+  const msg = await ask('📝 Mensaje del commit: ');
+  const safeMsg = msg.replace(/"/g, '\\"') || 'Auto commit';
 
   try {
     run(`git commit -m "${safeMsg}"`);
-    console.log(chalk.green('✅ Commit realizado'));
   } catch {
     console.log(chalk.yellow('⚠ Nada nuevo para commitear'));
   }
@@ -95,28 +93,18 @@ const banner = () => {
     branch = run('git symbolic-ref --short HEAD').trim();
   } catch {
     run('git branch -M main');
-    branch = 'main';
   }
 
-  const push = ora(`🚀 Enviando a GitHub...\n\n`).start();
+  console.log(chalk.cyan('\n🚀 Enviando a GitHub...\n'));
+
   try {
     run(`git push -u origin ${branch}`, true);
-    push.succeed(chalk.green('✔ Proyecto subido correctamente 🎉'));
+    console.log(chalk.green('✔ Proyecto subido correctamente 🎉'));
   } catch {
-    push.fail(chalk.red('❌ Autenticación requerida'));
+    console.log(chalk.red('\n❌ Autenticación requerida'));
 
-    const { useToken } = await inquirer.prompt({
-      type: 'confirm',
-      name: 'useToken',
-      message: '🔐 ¿Deseas usar un token personal?'
-    });
-
-    if (!useToken) process.exit(1);
-
-    const { user, token } = await inquirer.prompt([
-      { name: 'user', message: '👤 Usuario GitHub:' },
-      { name: 'token', message: '🔑 Token PAT:' }
-    ]);
+    const user = await ask('👤 Usuario GitHub: ');
+    const token = await ask('🔑 Token PAT: ');
 
     const tokenUrl = repo.replace(
       'https://',
@@ -126,11 +114,11 @@ const banner = () => {
     run(`git remote set-url origin ${tokenUrl}`);
     run(`git push -u origin ${branch}`, true);
 
-    // 🔒 Restaurar URL limpia (MUY IMPORTANTE)
     run(`git remote set-url origin ${repo}`);
 
-    console.log(chalk.green('✔ Push exitoso con autenticación segura'));
+    console.log(chalk.green('✔ Push exitoso con autenticación'));
   }
 
+  rl.close();
   console.log(chalk.cyan('\n✨ Proceso terminado\n'));
 })();
