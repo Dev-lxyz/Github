@@ -8,18 +8,28 @@ import figlet from "figlet";
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-const run = cmd => execSync(cmd, { stdio: "ignore" });
-const runLive = cmd => execSync(cmd, { stdio: "inherit" });
+const run = (cmd, show = false) => {
+  try {
+    return execSync(cmd, { stdio: show ? "inherit" : "pipe" }).toString();
+  } catch (err) {
+    throw err;
+  }
+};
+
 const exists = cmd => {
-  try { execSync(cmd, { stdio: "ignore" }); return true; }
-  catch { return false; }
+  try {
+    execSync(cmd, { stdio: "ignore" });
+    return true;
+  } catch {
+    return false;
+  }
 };
 
 const banner = () => {
   console.clear();
   console.log(
     gradient(['red', 'blue'])(
-      figlet.textSync('GITHUB - UPLOAD', {
+      figlet.textSync('GITHUB UPLOAD', {
         horizontalLayout: 'default',
         verticalLayout: 'default'
       })
@@ -27,26 +37,19 @@ const banner = () => {
   );
 };
 
-const typewriter = async text => {
-  for (const c of text) {
-    process.stdout.write(chalk.hex('#ff69b4')(c));
-    await sleep(15);
-  }
-  console.log();
-};
-
 (async () => {
   banner();
   console.log(chalk.magentaBright('\n🌱 Iniciando...\n'));
-  await typewriter('⚡ Asistente profesional de subida a GitHub.\n');
+  await sleep(500);
 
   const { folder } = await inquirer.prompt({
     name: 'folder',
     message: '📁 Ruta del proyecto:',
     validate: p => fs.existsSync(p) || '❌ La carpeta no existe'
   });
+
   process.chdir(folder);
-  
+
   const { repo } = await inquirer.prompt({
     name: 'repo',
     message: '🌍 URL del repositorio:',
@@ -55,7 +58,6 @@ const typewriter = async text => {
 
   const spinner = ora('⚙️ Preparando entorno...').start();
   run(`git config --global --add safe.directory "${folder}"`);
-  await sleep(500);
   spinner.succeed('✅ Entorno listo');
 
   if (!fs.existsSync('.git')) {
@@ -69,26 +71,36 @@ const typewriter = async text => {
   }
   run(`git remote add origin ${repo}`);
 
-  ora('🌾 Agregando archivos...').start();
+  const addSpin = ora('🌾 Agregando archivos...').start();
   run('git add .');
-  
+  addSpin.succeed('✅ Archivos agregados');
+
   const { msg } = await inquirer.prompt({
     name: 'msg',
     message: '📝 Mensaje del commit:',
     default: 'Auto commit by Shadow CLI'
   });
 
+  const safeMsg = msg.replace(/"/g, '\\"');
+
   try {
-    run(`git commit -m "${msg}"`);
+    run(`git commit -m "${safeMsg}"`);
+    console.log(chalk.green('✅ Commit realizado'));
   } catch {
     console.log(chalk.yellow('⚠ Nada nuevo para commitear'));
   }
 
-  run('git branch -M main');
+  let branch = 'main';
+  try {
+    branch = run('git symbolic-ref --short HEAD').trim();
+  } catch {
+    run('git branch -M main');
+    branch = 'main';
+  }
 
   const push = ora('🚀 Enviando a GitHub...').start();
   try {
-    runLive('git push -u origin main');
+    run(`git push -u origin ${branch}`, true);
     push.succeed(chalk.green('✔ Proyecto subido correctamente 🎉'));
   } catch {
     push.fail(chalk.red('❌ Autenticación requerida'));
@@ -96,7 +108,7 @@ const typewriter = async text => {
     const { useToken } = await inquirer.prompt({
       type: 'confirm',
       name: 'useToken',
-      message: '🔐 ¿Deseas usar un token personal de GitHub?'
+      message: '🔐 ¿Deseas usar un token personal?'
     });
 
     if (!useToken) process.exit(1);
@@ -112,12 +124,13 @@ const typewriter = async text => {
     );
 
     run(`git remote set-url origin ${tokenUrl}`);
-    runLive('git push -u origin main');
+    run(`git push -u origin ${branch}`, true);
+
+    // 🔒 Restaurar URL limpia (MUY IMPORTANTE)
+    run(`git remote set-url origin ${repo}`);
 
     console.log(chalk.green('✔ Push exitoso con autenticación segura'));
   }
 
-  console.log(
-    chalk.cyan(`-`)
-  );
+  console.log(chalk.cyan('\n✨ Proceso terminado\n'));
 })();
