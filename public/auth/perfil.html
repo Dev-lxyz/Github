@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #2563eb;
+    --blue-light: #60a5fa;
+    --blue-pale: #dbeafe;
+    --blue-dark: #1d4ed8;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2eaf8;
+    --card-bg: rgba(255,255,255,0.88);
+    --danger: #ef4444;
+    --success: #22c55e;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f0f7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ── BACKGROUND ── */
+  .bg-canvas {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 40%, #f8faff 100%);
+    z-index: 0;
+  }
+
+  .bg-dots {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #bfdbfe 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .petal {
+    position: fixed;
+    opacity: 0;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .flower {
+    position: fixed;
+    pointer-events: none;
+    animation: sway ease-in-out infinite;
+    z-index: 1;
+  }
+
+  @keyframes floatUp {
+    0%   { transform: translateY(110vh) rotate(0deg) scale(0.6); opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.4; }
+    100% { transform: translateY(-10vh) rotate(360deg) scale(1); opacity: 0; }
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-8deg) translateY(0); }
+    50%       { transform: rotate(8deg) translateY(-12px); }
+  }
+
+  /* ── LAYOUT ── */
+  .page {
+    position: relative;
+    z-index: 10;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 32px 16px 60px;
+  }
+
+  /* ── HEADER / BANNER ── */
+  .profile-header {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: 0 4px 6px rgba(37,99,235,0.07), 0 20px 60px rgba(37,99,235,0.12);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .banner-wrap {
+    position: relative;
+    height: 140px;
+    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .banner-wrap img.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .banner-wrap:hover .banner-overlay {
+    background: rgba(0,0,0,0.35);
+  }
+
+  .banner-overlay span {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s;
+  }
+
+  .banner-wrap:hover .banner-overlay span { opacity: 1; }
+
+  .banner-overlay svg { width: 16px; height: 16px; }
+
+  .avatar-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 0 24px 20px;
+    margin-top: -36px;
+    position: relative;
+  }
+
+  .avatar-wrap {
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .avatar-wrap img,
+  .avatar-wrap .avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.2);
+    object-fit: cover;
+    display: block;
+  }
+
+  .avatar-wrap .avatar-placeholder {
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 700;
+  }
+
+  .avatar-edit-badge {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 24px;
+    height: 24px;
+    background: var(--blue);
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar-edit-badge svg { width: 11px; height: 11px; color: white; }
+
+  .user-info {
+    flex: 1;
+    padding-top: 36px;
+  }
+
+  .user-info h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .user-info .user-rate {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .user-info .user-rate svg { width: 12px; height: 12px; }
+
+  .header-actions {
+    padding-top: 36px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn-ghost {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn-ghost:hover { border-color: var(--blue-light); color: var(--blue); background: #f0f7ff; }
+  .btn-ghost svg { width: 14px; height: 14px; }
+
+  .btn-danger-ghost {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1.5px solid #fecaca;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--danger);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn-danger-ghost:hover { background: #fef2f2; border-color: var(--danger); }
+  .btn-danger-ghost svg { width: 14px; height: 14px; }
+
+  /* ── STATS ROW ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 18px 16px;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.08);
+    text-align: center;
+  }
+
+  .stat-card .stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--blue);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .stat-card .stat-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.08);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--blue-pale);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-header-icon svg { width: 15px; height: 15px; color: var(--blue); }
+
+  .section-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .section-body { padding: 18px 22px; }
+
+  /* ── FORM FIELDS ── */
+  .field { margin-bottom: 14px; }
+  .field:last-child { margin-bottom: 0; }
+
+  .field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .input-wrap {
+    display: flex;
+    align-items: center;
+    background: #f8faff;
+    border: 1.5px solid var(--border);
+    border-radius: 11px;
+    padding: 0 14px;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+
+  .input-wrap:focus-within {
+    border-color: var(--blue-light);
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.18);
+    background: #fff;
+  }
+
+  .input-wrap svg { width: 15px; height: 15px; color: var(--blue-light); flex-shrink: 0; }
+
+  .input-wrap input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    width: 100%;
+    padding: 11px 10px;
+  }
+
+  .input-wrap input::placeholder { color: #b0bec5; }
+
+  .input-wrap input:read-only {
+    color: var(--muted);
+    cursor: default;
+  }
+
+  /* key field with copy button */
+  .key-wrap {
+    display: flex;
+    align-items: center;
+    background: #f8faff;
+    border: 1.5px solid var(--border);
+    border-radius: 11px;
+    padding: 0 0 0 14px;
+    gap: 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .key-wrap:focus-within {
+    border-color: var(--blue-light);
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.18);
+    background: #fff;
+  }
+
+  .key-wrap svg.key-icon { width: 15px; height: 15px; color: var(--blue-light); flex-shrink: 0; }
+
+  .key-wrap input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-family: 'DM Sans', monospace;
+    font-size: 0.82rem;
+    width: 100%;
+    padding: 11px 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .key-wrap input::placeholder { color: #b0bec5; font-family: 'DM Sans', sans-serif; }
+
+  .key-actions {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .key-btn {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--muted);
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .key-btn:hover { color: var(--blue); background: #f0f7ff; }
+  .key-btn:last-child { border-radius: 0 10px 10px 0; }
+  .key-btn svg { width: 14px; height: 14px; }
+
+  /* ── SAVE BUTTON ── */
+  .btn-save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(135deg, var(--blue) 0%, #3b82f6 100%);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 16px;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.3);
+    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+  }
+
+  .btn-save:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(37,99,235,0.38); }
+  .btn-save:active { transform: translateY(0); }
+  .btn-save:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+  .btn-save svg { width: 15px; height: 15px; }
+
+  /* ── DANGER ZONE ── */
+  .danger-zone .section-header { border-color: #fecaca; }
+  .danger-zone .section-header-icon { background: #fef2f2; }
+  .danger-zone .section-header-icon svg { color: var(--danger); }
+
+  .danger-info {
+    font-size: 0.83rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .btn-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid var(--danger);
+    border-radius: 11px;
+    background: transparent;
+    color: var(--danger);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn-delete:hover { background: var(--danger); color: white; }
+  .btn-delete svg { width: 15px; height: 15px; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 200;
+    background: white;
+    border-radius: 14px;
+    padding: 13px 18px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    display: none;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 32px rgba(37,99,235,0.18), 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--blue);
+    max-width: 300px;
+  }
+
+  .toast.show {
+    display: flex;
+    animation: slideIn 0.3s ease;
+  }
+
+  @keyframes slideIn {
+    from { transform: translateX(30px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+
+  /* ── MODAL ── */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,0.5);
+    backdrop-filter: blur(4px);
+    z-index: 150;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-backdrop.show { display: flex; }
+
+  .modal {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 28px;
+    width: 92%;
+    max-width: 380px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: popIn 0.25s ease;
+  }
+
+  @keyframes popIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  .modal-icon {
+    width: 48px;
+    height: 48px;
+    background: #fef2f2;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .modal-icon svg { width: 22px; height: 22px; color: var(--danger); }
+
+  .modal h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .modal p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .modal-actions .btn-cancel {
+    flex: 1;
+    padding: 11px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .modal-actions .btn-cancel:hover { border-color: var(--blue-light); color: var(--blue); }
+
+  .modal-actions .btn-confirm-delete {
+    flex: 1;
+    padding: 11px;
+    border: none;
+    border-radius: 10px;
+    background: var(--danger);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .modal-actions .btn-confirm-delete:hover { opacity: 0.88; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 540px) {
+    .stats-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-card { padding: 14px 10px; }
+    .stat-card .stat-val { font-size: 1.2rem; }
+    .avatar-row { padding: 0 16px 16px; }
+    .section-body { padding: 16px; }
+    .header-actions { flex-wrap: wrap; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="bg-canvas"></div>
+<div class="bg-dots"></div>
+
+<svg style="display:none">
+  <defs>
+    <symbol id="flower5" viewBox="-20 -20 40 40">
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(288)"/>
+      <circle cx="0" cy="0" r="4" fill="#fff" opacity="0.9"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Main page -->
+<div class="page">
+
+  <!-- Profile header -->
+  <div class="profile-header">
+    <div class="banner-wrap" id="bannerWrap">
+      <img class="banner-img" id="bannerImg" src="" alt="" style="display:none">
+      <div class="banner-overlay">
+        <span><i data-lucide="camera"></i> Cambiar banner</span>
+      </div>
+    </div>
+
+    <div class="avatar-row">
+      <div class="avatar-wrap" id="avatarWrap">
+        <div class="avatar-placeholder" id="avatarPlaceholder">?</div>
+        <img id="avatarImg" src="" alt="" style="display:none; width:80px;height:80px;border-radius:50%;border:4px solid white;box-shadow:0 4px 16px rgba(37,99,235,0.2);object-fit:cover;">
+        <div class="avatar-edit-badge">
+          <i data-lucide="pencil"></i>
+        </div>
+      </div>
+
+      <div class="user-info">
+        <h1 id="displayUsername">—</h1>
+        <div class="user-rate">
+          <i data-lucide="zap"></i>
+          <span id="displayRateLimit">—</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn-ghost" id="logoutBtn">
+          <i data-lucide="log-out"></i>
+          Salir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-val" id="statUsos">0</div>
+      <div class="stat-label">Usos hoy</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" id="statLimit">1000</div>
+      <div class="stat-label">Límite</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" id="statTotal">0</div>
+      <div class="stat-label">Total</div>
+    </div>
+  </div>
+
+  <!-- API Key -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-header-icon"><i data-lucide="key"></i></div>
+      <h3>API Key</h3>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label>Tu clave actual</label>
+        <div class="key-wrap">
+          <i data-lucide="key" class="key-icon"></i>
+          <input type="password" id="apikeyDisplay" readonly placeholder="••••••••••••••••">
+          <div class="key-actions">
+            <button class="key-btn" id="toggleKeyBtn" title="Mostrar/Ocultar">
+              <i data-lucide="eye"></i>
+            </button>
+            <button class="key-btn" id="copyKeyBtn" title="Copiar">
+              <i data-lucide="copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Personalizar key</label>
+        <div class="input-wrap">
+          <i data-lucide="edit-3"></i>
+          <input type="text" id="customKey" placeholder="Min. 10 caracteres, sin espacios">
+        </div>
+      </div>
+
+      <button class="btn-save" id="saveKeyBtn">
+        <i data-lucide="save"></i>
+        Guardar key personalizada
+      </button>
+
+      <button class="btn-save" id="resetKeyBtn" style="margin-top:8px;background:linear-gradient(135deg,#64748b,#94a3b8);">
+        <i data-lucide="refresh-cw"></i>
+        Regenerar key aleatoria
+      </button>
+    </div>
+  </div>
+
+  <!-- Perfil -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-header-icon"><i data-lucide="user-circle"></i></div>
+      <h3>Perfil</h3>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label>URL de Avatar</label>
+        <div class="input-wrap">
+          <i data-lucide="image"></i>
+          <input type="url" id="avatarInput" placeholder="https://... (imagen de perfil)">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>URL de Banner</label>
+        <div class="input-wrap">
+          <i data-lucide="image"></i>
+          <input type="url" id="bannerInput" placeholder="https://... (imagen de fondo)">
+        </div>
+      </div>
+
+      <button class="btn-save" id="saveProfileBtn">
+        <i data-lucide="check"></i>
+        Guardar perfil
+      </button>
+    </div>
+  </div>
+
+  <!-- Contraseña -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-header-icon"><i data-lucide="lock"></i></div>
+      <h3>Cambiar contraseña</h3>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label>Nueva contraseña</label>
+        <div class="input-wrap">
+          <i data-lucide="lock"></i>
+          <input type="password" id="newPassword" placeholder="Nueva contraseña">
+        </div>
+      </div>
+      <div class="field">
+        <label>Confirmar contraseña</label>
+        <div class="input-wrap">
+          <i data-lucide="shield-check"></i>
+          <input type="password" id="confirmNewPassword" placeholder="Repite la nueva contraseña">
+        </div>
+      </div>
+      <button class="btn-save" id="savePasswordBtn">
+        <i data-lucide="lock"></i>
+        Actualizar contraseña
+      </button>
+    </div>
+  </div>
+
+  <!-- Danger zone -->
+  <div class="section danger-zone">
+    <div class="section-header">
+      <div class="section-header-icon"><i data-lucide="alert-triangle"></i></div>
+      <h3>Zona peligrosa</h3>
+    </div>
+    <div class="section-body">
+      <p class="danger-info">
+        Eliminar tu cuenta es permanente. Se borrarán todos tus datos y tu API key dejará de funcionar.
+      </p>
+      <button class="btn-delete" id="deleteAccountBtn">
+        <i data-lucide="trash-2"></i>
+        Eliminar cuenta
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Modal confirmar eliminación -->
+<div class="modal-backdrop" id="deleteModal">
+  <div class="modal">
+    <div class="modal-icon"><i data-lucide="trash-2"></i></div>
+    <h3>¿Eliminar cuenta?</h3>
+    <p>Esta acción no se puede deshacer. Ingresa tu contraseña para confirmar.</p>
+    <div class="field" style="margin-bottom:20px">
+      <div class="input-wrap">
+        <i data-lucide="lock"></i>
+        <input type="password" id="deletePassword" placeholder="Tu contraseña actual">
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="cancelDeleteBtn">Cancelar</button>
+      <button class="btn-confirm-delete" id="confirmDeleteBtn">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<script src="/auth/script.js"></script>
+<script src="/auth/perfil.js"></script>
+
+</body>
+</html>

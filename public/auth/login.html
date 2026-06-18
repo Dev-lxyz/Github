@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #2563eb;
+    --blue-light: #60a5fa;
+    --text: #1e293b;
+    --muted: #64748b;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f0f7ff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bg-canvas {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 45%, #f8faff 100%);
+    z-index: 0;
+  }
+
+  .bg-dots {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #bfdbfe 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.45;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .petal {
+    position: absolute;
+    opacity: 0;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .flower {
+    position: absolute;
+    pointer-events: none;
+    animation: sway ease-in-out infinite;
+    z-index: 1;
+  }
+
+  @keyframes floatUp {
+    0%   { transform: translateY(110vh) rotate(0deg) scale(0.6); opacity: 0; }
+    10%  { opacity: 0.7; }
+    90%  { opacity: 0.5; }
+    100% { transform: translateY(-10vh) rotate(360deg) scale(1); opacity: 0; }
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-8deg) translateY(0); }
+    50%       { transform: rotate(8deg) translateY(-12px); }
+  }
+
+  .card {
+    position: relative;
+    z-index: 10;
+    width: 92%;
+    max-width: 420px;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 28px;
+    box-shadow:
+      0 4px 6px rgba(37,99,235,0.07),
+      0 20px 60px rgba(37,99,235,0.14),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+    padding: 48px 40px;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-light), var(--blue));
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .brand-icon {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+  }
+
+  .brand-icon svg { color: white; width: 22px; height: 22px; }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--blue);
+  }
+
+  .heading {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .heading p {
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  .field { margin-bottom: 14px; }
+
+  .field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .input-wrap {
+    display: flex;
+    align-items: center;
+    background: #f8faff;
+    border: 1.5px solid #e2eaf8;
+    border-radius: 12px;
+    padding: 0 14px;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+
+  .input-wrap:focus-within {
+    border-color: var(--blue-light);
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.2);
+    background: #fff;
+  }
+
+  .input-wrap svg { width: 16px; height: 16px; color: var(--blue-light); flex-shrink: 0; }
+
+  .input-wrap input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 12px 10px;
+  }
+
+  .input-wrap input::placeholder { color: #b0bec5; }
+
+  .btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--blue) 0%, #3b82f6 100%);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(37,99,235,0.35);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,99,235,0.42); }
+  .btn:active { transform: translateY(0); }
+  .btn svg { width: 17px; height: 17px; }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    color: #cbd5e1;
+    font-size: 0.78rem;
+  }
+
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e2eaf8;
+  }
+
+  .footer-link {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .footer-link a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .footer-link a:hover { text-decoration: underline; }
+
+  .toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 100;
+    background: white;
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    display: none;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 32px rgba(37,99,235,0.18), 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--blue);
+    animation: slideIn 0.3s ease;
+    max-width: 300px;
+  }
+
+  @keyframes slideIn {
+    from { transform: translateX(30px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 36px 24px; }
+    .heading h2 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="bg-canvas"></div>
+<div class="bg-dots"></div>
+
+<svg style="display:none">
+  <defs>
+    <symbol id="flower5" viewBox="-20 -20 40 40">
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-10" rx="5" ry="10" fill="currentColor" opacity="0.8" transform="rotate(288)"/>
+      <circle cx="0" cy="0" r="4" fill="#fff" opacity="0.9"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="card">
+  <div class="brand">
+    <div class="brand-icon">
+      <i data-lucide="sparkles"></i>
+    </div>
+    <span class="brand-name">Nexus Light</span>
+  </div>
+
+  <div class="heading">
+    <h2>Bienvenido de vuelta</h2>
+    <p>Ingresa tus credenciales para continuar</p>
+  </div>
+
+  <div class="field">
+    <label>Usuario</label>
+    <div class="input-wrap">
+      <i data-lucide="user"></i>
+      <input id="username" placeholder="Tu nombre de usuario" autocomplete="username">
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Contraseña</label>
+    <div class="input-wrap">
+      <i data-lucide="lock"></i>
+      <input id="password" type="password" placeholder="Tu contraseña" autocomplete="current-password">
+    </div>
+  </div>
+
+  <button class="btn" id="loginBtn">
+    <i data-lucide="log-in"></i>
+    Entrar
+  </button>
+
+  <div class="divider">o</div>
+
+  <p class="footer-link">
+    ¿No tienes cuenta? <a href="/register">Crear una</a>
+  </p>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/auth/script.js"></script>
+<script src="/auth/login.js"></script>
+
+</body>
+</html>

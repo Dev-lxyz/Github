@@ -1,0 +1,3163 @@
+{
+  "categories": [
+    {
+      "name": "STICKER",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗦𝘁𝗶𝗰𝗸𝗲𝗿𝗹𝘆",
+          "desc": "search from stickerly.",
+          "path": "/sticker/search/stickerly",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "query": "Enter query...",
+            "key": "ᥡ᥆ᥙr ᥲ⍴іkᥱᥡ..."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝘁𝗶𝗰𝗸𝗲𝗿𝗹𝘆",
+          "desc": "search from stickerly.",
+          "path": "/sticker/download/stickerly",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺",
+          "desc": "Downloader from sticker telegram.",
+          "path": "/sticker/telegram",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗲𝘁𝘀𝘁𝗶𝗰𝗸𝗲𝗿𝗽𝗮𝗰𝗸",
+          "desc": "Download from getstickerpack.",
+          "path": "/sticker/getsticker",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter query..."
+          }
+        }
+      ]
+    },
+    {
+      "name": "AI",
+      "status": true,
+      "items": [
+        {
+          "name": "❀ 𝗚𝗽𝘁-3.5 𝗔𝗜",
+          "desc": "Chat with chateverywhere",
+          "path": "/ai/gpt-3.5",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text...",
+            "system": "Enter system",
+            "lang": "Enter lang..."
+          }
+        },
+        {
+          "name": "❀ 𝗦𝗵𝗮𝗱𝗼𝘄 𝗖𝗵𝗮𝘁",
+          "desc": "Chat with shadow / Nexu's Light",
+          "path": "/ai/shadow",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text...",
+            "sessionId": "Enter sessionID..."
+          }
+        },
+        {
+          "name": "𝗚𝗲𝗻𝗺𝘆𝗮𝗿𝘁",
+          "desc": "undefined",
+          "path": "/ai/genmyart",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt...",
+            "style": "Enter style...",
+            "resolution": "Enter resolution...",
+            "ratio": "Enter ratio...",
+            "num": "Enter número : 1, 2, 3 ect"
+          }
+        },
+        {
+          "name": "𝗠𝘂𝘀𝗶𝗰 𝗜𝗔",
+          "desc": "Genera música ectt..",
+          "path": "/ai/music",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt...",
+            "styles": "Enter style...",
+            "title": "Enter titlte...",
+            "lyrics": "Enter lyrics...",
+            "mv": "Enter mv...",
+            "supplier": "Enter supplier"
+          }
+        },
+        {
+          "name": "𝗖𝗵𝗮𝘁 𝗜𝗔",
+          "desc": "Chat with chatgpt, Abla con diferentes IA's.",
+          "path": "/ai/chat",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt...",
+            "select": {
+              "name": "model",
+              "label": "seleccione modelo.",
+              "options": [
+                {"value": "openai/gpt-5.5", "label": "openai/gpt-5.5"},
+                {"value": "openai/gpt-5.4", "label": "openai/gpt-5.4"},
+                {"value": "openai/gpt-5.3-chat", "label": "openai/gpt-5.3-chat"},
+                {"value": "openai/gpt-5.1-instant", "label": "openai/gpt-5.1-instant"},
+                {"value": "openai/gpt-5", "label": "openai/gpt-5"},
+                {"value": "openai/gpt-4o", "label": "openai/gpt-4o"},
+                {"value": "openai/gpt-4o-mini", "label": "openai/gpt-4o-mini"},
+                {"value": "xai/grok-4.1-fast-non-reasoning", "label": "xai/grok-4.1-fast-non-reasoning"},
+                {"value": "anthropic/claude-haiku-4.5", "label": "anthropic/claude-sonnet-4.6"},
+                {"value": "anthropic/claude-opus-4.5", "label": "anthropic/claude-opus-4.5"},
+                {"value": "anthropic/claude-opus-4.6", "label": "anthropic/claude-opus-4.6"},
+                {"value": "anthropic/claude-opus-4.7", "label": "anthropic/claude-opus-4.7"},
+                {"value": "anthropic/claude-opus-4.8", "label": "anthropic/claude-opus-4.8"},
+                {"value": "anthropic/claude-fable-5", "label": "anthropic/claude-fable-5"},
+                {"value": "deepseek/deepseek-v4-pro", "label": "deepseek/deepseek-v4-pro"},
+                {"value": "deepseek/deepseek-v4-flash", "label": "deepseek/deepseek-v4-flash"},
+                {"value": "deepseek/deepseek-v3.2-thinking", "label": "deepseek/deepseek-v3.2-thinking"},
+                {"value": "google/gemini-3.1-pro-preview", "label": "google/gemini-3.1-pro-preview"},
+                {"value": "google/gemini-3-pro-preview", "label": "google/gemini-3-pro-preview"},
+                {"value": "google/gemini-3.1-flash-lite", "label": "google/gemini-3.1-flash-lite"},
+                {"value": "alibaba/qwen3-max", "label": "alibaba/qwen3-max"},
+                {"value": "meta/llama-4-maverick", "label": "meta/llama-4-maverick"},
+                {"value": "moonshotai/kimi-k2.6", "label": "moonshotai/kimi-k2.6"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "𝗘𝗱𝗶𝘁 𝗗𝗲𝗲𝗽𝗮𝗶",
+          "desc": "Edita una imagen con IA xd",
+          "path": "/ai/deepai-edit",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "img": "Enter imagen url...",
+            "prompt": "Enter prompt..."
+          }
+        },
+        {
+          "name": "𝗤𝘄𝗲𝗻 𝗖𝗵𝗮𝘁",
+          "desc": "Chat with qwen",
+          "path": "/ai/qwen",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text...",
+            "search": "Enter true, false"
+          }
+        },
+        {
+          "name": "𝗤𝘂𝗶𝗹𝗹𝗯𝗼𝘁 𝗧𝘅𝘁2𝗶𝗺𝗴",
+          "desc": "Generate image with quillbot img",
+          "path": "/ai/quillbot/image",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt...",
+            "aspect_ratio": "Enter ratio..."
+          }
+        },
+        {
+          "name": "𝗕𝗹𝗮𝗰𝗸𝗕𝗼𝘅 𝗔𝗜",
+          "desc": "Chat with blackbox",
+          "path": "/ai/blackbox",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt...",
+            "webSearch": "Enter : true, false ..."
+          }
+        },
+        {
+          "name": "𝗣𝗼𝗹𝗹𝗶𝗻𝗮𝘁𝗶𝗼𝗻𝘀 𝗔𝗜",
+          "desc": "Generate imagen de image.pollinations.ai",
+          "path": "/ai/teks2image",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "image": "Enter prompt...",
+            "prompt": "Enter model: flux, turbo, sdxl, sd3, dalle3"
+          }
+        },
+        {
+          "name": "𝗜𝗺𝗴2𝗶𝗺𝗴",
+          "desc": "Generate imagen img2img with a GET, POST",
+          "path": "/ai/img2img",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "image": "imagen url",
+            "prompt": "іmᥲgᥱ ⍴r᥆m⍴𝗍"
+          }
+        },
+        {
+          "name": "𝗚𝗽𝘁 4.1 𝗡𝗮𝗻𝗼",
+          "desc": "Chat with gpt41nano",
+          "path": "/ai/gpt41nano",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt..."
+          }
+        },
+        {
+          "name": "𝗔𝗜 𝗩𝗶𝗱𝗲𝗼",
+          "desc": "Generate videos con IA puede ser lento Pero x ahora funciona (xD)",
+          "path": "/ai/video",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt..."
+          }
+        },
+        {
+          "name": "𝗗𝗲𝗲𝗽𝗮𝗶 𝗧𝘅𝘁2𝗶𝗺𝗴",
+          "desc": "Generate image :: Deepai-Txt2img",
+          "path": "/ai/deepai-Txt2img",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt..."
+          }
+        },
+        {
+          "name": "𝗗𝗲𝗲𝗽𝗮𝗶 𝗔𝗜",
+          "desc": "Generate image :: Deepai-ai",
+          "path": "/ai/deepai",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt..."
+          }
+        },
+        {
+          "name": "𝗚𝗽𝘁 𝗢𝗻𝗹𝗶𝗻𝗲",
+          "desc": "Chat with gptonline",
+          "path": "/ai/gptonline",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗗𝗲𝗲𝗽𝘀𝗲𝗲𝗸 𝗔𝗜",
+          "desc": "Chat with deepseek",
+          "path": "/ai/deepseek",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt..."
+          }
+        },
+        {
+          "name": "𝗙𝗿𝗲𝗲𝗴𝗲𝗻 𝗜𝗺𝗮𝗴𝗲",
+          "desc": "Generate image con freegen",
+          "path": "/ai/freegen-image",
+          "method": "GET",
+          "status": true,
+          "params": { 
+            "prompt": "Enter ⍴r᥆m⍴𝗍..."
+          }
+        },
+        {
+          "name": "𝗚𝗲𝗺𝗶𝗻𝗶 3.1 𝗙𝗹𝗮𝘀𝗵 𝗹𝗶𝘁𝗲 𝗣𝗿𝗲𝘃𝗶𝗲𝘄",
+          "desc": "Chat with gemini-3.1-flash-lite-preview",
+          "path": "/ai/gemini-3.1",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗖𝗹𝗮𝘂𝗱𝗲 𝗛𝗮𝗶𝗸𝘂 4.5",
+          "desc": "Chat with claude-haiku-4.5",
+          "path": "/ai/claude-haiku",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗤𝘄𝗲𝗻 - 3",
+          "desc": "Chat with qwen-3",
+          "path": "/ai/qwen-3",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗚𝗿𝗼𝗸 𝗔𝗜",
+          "desc": "Chat with grok",
+          "path": "/ai/grok",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt..."
+          }
+        },
+        {
+          "name": "𝗧𝘀𝘂𝗻𝗱𝗲𝗿𝗲 𝗧𝗧𝗦",
+          "desc": "Generate audio tsundere",
+          "path": "/ai/tsundere-tts",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗤𝘂𝗶𝗹𝗹𝗯𝗼𝘁",
+          "desc": "Chat with quillbot",
+          "path": "/ai/quillbot",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt..."
+          }
+        },
+        {
+          "name": "𝗚𝗶𝘁𝗮 𝗚𝗽𝘁",
+          "desc": "Chat with gitagpt",
+          "path": "/ai/gitagpt",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗚𝗽𝘁5-𝗻𝗮𝗻𝗼",
+          "desc": "Chat with gpt5-nano",
+          "path": "/ai/gpt5-nano",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗖𝗹𝗮𝘂𝗱𝗲 𝗔𝗜",
+          "desc": "Chat with claude",
+          "path": "/ai/claude",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗡𝗼𝘃𝗮 𝗔𝗜",
+          "desc": "Chat with novaai",
+          "path": "/ai/nova",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗩𝗲𝗻𝗶𝗰𝗲 𝗔𝗜",
+          "desc": "Chat with venice ai..",
+          "path": "/ai/venice",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗔𝗜 𝗕𝗮𝗻𝗮𝗻𝗮",
+          "desc": "Test.",
+          "path": "/ai/banana",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..."
+          }
+        },
+        {
+          "name": "𝗖𝗵𝗮𝘁 𝗚𝗽𝘁",
+          "desc": "Chat with chatgpt.",
+          "path": "/ai/chatgpt",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter question..."
+          }
+        },
+        {
+          "name": "𝗚𝗽𝘁-4",
+          "desc": "Chat with GPT-4",
+          "path": "/ai/gpt-4",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "𝗊ᥙᥱs𝗍і᥆ᥒ",
+            "user_id": "Enter user ID..",
+            "quoted": "true, false",
+            "prompt": "Enter prompt..."
+          }
+        },
+        {
+          "name": "𝗛𝘆𝗱𝗿𝗼𝗠𝗶𝗻𝗱",
+          "desc": "Chat with HydroMind",
+          "path": "/ai/hydromind",
+          "method": "GET",
+          "status": false,
+          "params": {
+            "text": "𝗊ᥙᥱs𝗍і᥆ᥒ",
+            "model": "m᥆ძᥱᥣ ᥒᥲmᥱ"
+          }
+        },
+        {
+          "name": "𝗦𝘂𝗻𝗼 𝗔𝗜",
+          "desc": "Generate music with Suno AI",
+          "path": "/ai/sunoai",
+          "method": "GET",
+          "status": true,
+          "params": { 
+            "prompt": "Enter ⍴r᥆m⍴𝗍..."
+          }
+        },
+        {
+          "name": "𝗔𝗜 𝗶𝗺𝗮𝗴𝗲",
+          "desc": "Generate image with AI",
+          "path": "/ai/image",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt.. ."
+          }
+        },
+        {
+          "name": "𝗢𝗽𝗲𝗻𝗮𝗶",
+          "desc": "Chat with OpenAI",
+          "path": "/ai/openai",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "𝗊ᥙᥱs𝗍і᥆ᥒ"
+          }
+        },
+        {
+          "name": "𝗡𝗼𝘁𝗲 𝗚𝗽𝘁",
+          "desc": "Chat with NoteGPT.",
+          "path": "/ai/notegpt",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter question...",
+            "select": {
+              "name": "model",
+              "label": "seleccione modelo.",
+              "options": [
+                {"value": "gpt-4.1-mini", "label": "gpt-4.1-mini"},
+                {"value": "gpt-4.1", "label": "gpt-4.1"},
+                {"value": "gpt-4o-mini", "label": "gpt-4o-mini"},
+                {"value": "gpt-4o", "label": "gpt-4o"},
+                {"value": "claude-3-haiku", "label": "claude-3-haiku"},
+                {"value": "claude-3-sonnet", "label": "claude-3-sonnet"},
+                {"value": "gemini-pro", "label": "gemini-pro"},
+                {"value": "gemini-1.5-pro", "label": "gemini-1.5-pro"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "𝗚𝗲𝗺𝗶𝗻𝗶 𝗔𝗜 𝗖𝗵𝗮𝘁",
+          "desc": "Chat with Gemini",
+          "path": "/ai/gemini",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "prompt": "Enter prompt.. ."
+          }
+        },
+        {
+          "name": "𝗚𝗲𝗺𝗶𝗻𝗶 𝗔𝗜 𝗩2",
+          "desc": "Chat with Gemini",
+          "path": "/ai/gemini/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text.. .",
+            "prompt":  "Enter prompt...",
+            "sessionId": "Enter session ID..."
+          }
+        },
+        {
+          "name": "𝗦𝗶𝗺𝘀𝗶𝗺𝗶",
+          "desc": "Chat with Simsimi.",
+          "path": "/ai/simi",
+          "method": "GET",
+          "status": false,
+          "params": { 
+            "text": "𝗊ᥙᥱs𝗍і᥆ᥒ"
+          }
+        },
+        {
+          "name": "𝗖𝗼𝗽𝗶𝗹𝗼𝘁 𝗔𝗜",
+          "desc": "Chat with copilot",
+          "path": "/ai/copilot",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text...",
+            "model": "Enter model..."
+          }
+        },
+        {
+          "name": "𝗡𝗮𝗻𝗼 𝗕𝗮𝗻𝗮𝗻𝗮",
+          "desc": "Generate imagen nanobanana with ai",
+          "path": "/ai/nanobanana",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "image": "imagen url",
+            "prompt": "іmᥲgᥱ ⍴r᥆m⍴𝗍"
+          }
+        },
+        {
+          "name": "𝗪𝗲𝗯𝗽𝗶𝗹𝗼𝘁 𝗔𝗶",
+          "desc": "search with webpilot",
+          "path": "/ai/webpilot",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query.. ."
+          }
+        }
+      ]
+    },
+    {
+      "name": "RANDOM",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗔𝗻𝗶𝗺𝗲",
+          "desc": "Imagenes aleatorias de personajes animes.",
+          "path": "/random/anime",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "name": "Enter name.. .",
+            "key": "Enter apikey..."
+          }
+        },
+        {
+          "name": "𝗕𝗹𝘂𝗲 𝗔𝗿𝗰𝗵𝗶𝘃𝗲",
+          "desc": "Imagenes aleatorias de Blue Archive.",
+          "path": "/random/ba",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗪𝗮𝗶𝗳𝘂",
+          "desc": "Imagenes aleatorias de Waifu.",
+          "path": "/random/waifu",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗪𝗮𝗶𝗳𝘂 𝗩2",
+          "desc": "Imagenes aleatorias de Waifu.",
+          "path": "/random/waifu/v2",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗡𝗲𝗸𝗼'𝘀",
+          "desc": "Imagenes aleatorias de Neko.",
+          "path": "/random/neko",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗘𝗹𝗮𝗶𝗻𝗮",
+          "desc": "Imagenes aleatorias de Elaina.",
+          "path": "/random/elaina",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗟𝗼𝗹𝗶",
+          "desc": "Imagen aleatoria de archivo loli.",
+          "path": "/random/loli",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗠𝗲𝗺𝗲",
+          "desc": "Memes xd",
+          "path": "/random/meme",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗔𝗹𝘆𝗮 𝗞𝘂𝗷𝗼𝘂",
+          "desc": "Imagenes aleatorias de Alisa Mikhailovna Kujou.",
+          "path": "/random/alya",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "cloud": "sube la imagen a un cdn: true, o false",
+            "key": "ᥡ᥆ᥙr ᥲ⍴іkᥱᥡ..."
+          }
+        },
+        {
+          "name": "𝗧𝗶𝗸𝘁𝗼𝗸",
+          "desc": "Videos random de Tiktok.",
+          "path": "/random/tiktok",
+          "method": "GET",
+          "status": true
+        }
+      ]
+    },
+    {
+      "name": "CANVAS",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗕𝗿𝗮𝘁 𝗞𝗼𝗯𝗼",
+          "desc": "Generate sticker bratkobo",
+          "path": "/canvas/kobobrat",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "𝗊ᥙᥱs𝗍і᥆ᥒ"
+          }
+        },
+        {
+          "name": "𝗔𝘁𝘁𝗽 𝗩𝗶𝗱𝗲𝗼",
+          "desc": "Crea un video de texto animado con efecto de cambio de color usando FFmpeg",
+          "path": "/canvas/attp",
+          "method": "GET",
+          "status": false,
+          "params": {
+            "text": "𝗊ᥙᥱs𝗍і᥆ᥒ"
+          }
+        },
+        {
+          "name": "𝗕𝗿𝗮𝘁",
+          "desc": "Generate sticker brat",
+          "path": "/canvas/brat",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "𝗊ᥙᥱs𝗍і᥆ᥒ"
+          }
+        },
+        {
+          "name": "𝗕𝗿𝗮𝘁 𝗩𝗶𝗱𝗲𝗼",
+          "desc": "Generate sticker brat video",
+          "path": "/canvas/bratv",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "𝗊ᥙᥱs𝗍і᥆ᥒ"
+          }
+        },
+        {
+          "name": "𝗘𝗺𝗼𝗷𝗶𝗺𝗶𝘅",
+          "desc": "Generate sticker from emojimix.",
+          "path": "/canvas/emojimix",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "emoji": "ᥱm᥆ȷі: 😀,😅"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SEARCH",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝘂𝘀𝗹𝗶𝗺𝗮𝗶",
+          "desc": "search from muslimai.io",
+          "path": "/search/muslimai",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "query": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗛𝗲𝗻𝘁𝗮𝗶 𝗚𝗶𝗳",
+          "desc": "search from hentaigifz .",
+          "path": "/search/hentaigifz",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...",
+            "limit": "Enter limit..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗧𝘄𝗶𝘁𝗰𝗵",
+          "desc": "search from twitch streamerx .",
+          "path": "/search/twitch",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗣𝗿𝗼𝗺𝗽𝘁𝗵𝗲𝗿𝗼",
+          "desc": "search from prompthero.",
+          "path": "/search/prompthero",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...",
+            "limit": "Enter limit...",
+            "page": "Enter page.."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗦𝗻𝗮𝗰𝗸𝘃𝗶𝗱𝗲𝗼",
+          "desc": "search from snackvideo.",
+          "path": "/search/snackvideo",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗳𝗮𝗰𝗲𝗯𝗼𝗼𝗸",
+          "desc": "search from facebook.",
+          "path": "/search/facebook",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺 𝗥𝗲𝗲𝗹𝘀 V2",
+          "desc": "search from & download reels Instagram.",
+          "path": "/search/reels/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...",
+            "num": "Enter limit..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺 𝗥𝗲𝗲𝗹𝘀",
+          "desc": "search from reels Instagram.",
+          "path": "/search/reels",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗬𝗼𝘂𝗽𝗼𝗿𝗻",
+          "desc": "search from youporn.",
+          "path": "/search/youporn",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...",
+            "limit": "Enter límit : 10"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗗𝗮𝗳𝗼𝗻",
+          "desc": "search from dafont.",
+          "path": "/search/dafont",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...",
+            "limit": "Enter límit : 10"
+          }
+        },
+        {
+          "name": "𝗚𝗲𝗻𝗶𝘂𝘀 𝗟𝗶𝗿𝗶𝗸",
+          "desc": "search from genius.",
+          "path": "/search/genius-lirik",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗗𝗲𝗲𝘇𝗲𝗿",
+          "desc": "search from deezer.",
+          "path": "/search/deezer",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...",
+            "limit": "Enter límit : 10"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗬𝗮𝗵𝗼𝗼",
+          "desc": "search from Yahoo.",
+          "path": "/search/yahoo",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗧𝗲𝗹𝗴𝗿𝗮𝗺 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
+          "desc": "search from telegram channel.",
+          "path": "/search/telegram-channel",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query..."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗬𝗼𝘂𝗧𝘂𝗯𝗲",
+          "desc": "search from YouTube.",
+          "path": "/search/yts",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗦𝗽𝗼𝘁𝗶𝗳𝘆",
+          "desc": "search from Spotify.",
+          "path": "/search/spotify",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query....",
+            "limit": "10"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗣𝗶𝗻𝘁𝗲𝗿𝗲𝘀𝘁",
+          "desc": "search from Pinterest.",
+          "path": "/search/pinterest",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗣𝗶𝗻𝘁𝗲𝗿𝗲𝘀𝘁 𝗩2",
+          "desc": "search from Pinterest V2.",
+          "path": "/search/pinterest/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗧𝗶𝗸𝘁𝗼𝗸",
+          "desc": "search from TikTok.",
+          "path": "/search/tiktok",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝗲𝗱𝗶𝗮𝗳𝗶𝗿𝗲",
+          "desc": "search from MediaFire.",
+          "path": "/search/mediafire",
+          "method": "GET",
+          "status": false,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗣𝗹𝗮𝘆𝘀𝘁𝗼𝗿𝗲",
+          "desc": "search from aplicaciónes de Play Store.",
+          "path": "/search/playstore",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗔𝗽𝗽𝗹𝗲 𝗠𝘂𝘀𝗶𝗰",
+          "desc": "search from applemusic.",
+          "path": "/search/applemusic",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query....",
+            "limit": "10"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗔𝗽𝗽𝗹𝗲𝗺𝘂𝘀𝗶𝗰 𝗩2",
+          "desc": "search from applemusic.",
+          "path": "/search/applemusic/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗦𝗼𝘂𝗻𝗱𝗰𝗹𝗼𝘂𝗱",
+          "desc": "search from soundcloud.",
+          "path": "/search/soundcloud",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗦𝗼𝘂𝗻𝗱𝗰𝗹𝗼𝘂𝗱 𝗬𝗮𝗵𝗼𝗼",
+          "desc": "search from soundcloud yahoo.",
+          "path": "/search/yahoo-soundcloud",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗦𝗼𝘂𝗻𝗱𝗰𝗹𝗼𝘂𝗱 𝗣𝗹𝗮𝘆𝗹𝗶𝘀𝘁.",
+          "desc": "search from soundcloud playlist.",
+          "path": "/search/soundcloud-playlist",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗟𝘆𝗿𝗶𝗰𝘀",
+          "desc": "search from Lyrics.",
+          "path": "/search/lyrics",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗙-𝗗𝗿𝗼𝗶𝗱",
+          "desc": "search from F-Droid.",
+          "path": "/search/fdroid",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗜𝗺𝗮𝗴𝗲𝗻",
+          "desc": "search from Google image.",
+          "path": "/search/google-image",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗥𝘂𝗹𝗲34",
+          "desc": "search from rule34.",
+          "path": "/search/rule34",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗣𝗶𝗻𝘁𝗲𝗿𝗲𝘀𝘁 𝗩𝗶𝗱𝗲𝗼",
+          "desc": "search from pinterest video.",
+          "path": "/search/pinterest-video",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗔𝗽𝘁𝗼𝗶𝗱𝗲",
+          "desc": "download from Aptoide.",
+          "path": "/search/aptoide",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗗𝗿𝗮𝗺𝗮𝗯𝗼𝘅",
+          "desc": "search from dramabox.",
+          "path": "/search/dramabox",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗧𝗲𝗻𝗼𝗿",
+          "desc": "search from tenor.",
+          "path": "/search/tenor",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗖𝘂𝗲𝘃𝗮𝗻𝗮",
+          "desc": "search from cuevana.",
+          "path": "/search/cuevana",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗪𝗶𝗸𝗶𝗽𝗲𝗱𝗶𝗮",
+          "desc": "search from wikipedia.",
+          "path": "/search/wiki",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗦𝗮𝗳𝗲𝗯𝗼𝗼𝗿𝘂",
+          "desc": "Busca contenido de safebooru.",
+          "path": "/search/safebooru",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗲𝗹𝗯𝗼𝗼𝗿𝘂",
+          "desc": "Busca contenido de Gelbooru.",
+          "path": "/search/gelbooru",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗔𝗽𝗽𝘀𝘁𝗼𝗿𝗲",
+          "desc": "search from appstore.",
+          "path": "/search/appstore",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query....",
+            "limit": "10"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗔𝗽𝗸𝗽𝘂𝗿𝗲",
+          "desc": "search from apkpure.",
+          "path": "/search/apkpure",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗿𝗼𝘂𝗽𝘀",
+          "desc": "search from WhatsApp grupos.",
+          "path": "/search/wagroup",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query....",
+            "page": "page : 1"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗕𝗶𝗻𝗴 𝗶𝗺𝗮𝗴𝗲",
+          "desc": "search from imagen bing.",
+          "path": "/search/bingimage",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query....",
+            "limit": "10"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗡𝗽𝗺",
+          "desc": "search from npm.",
+          "path": "/search/npm",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗶𝘁𝗵𝘂𝗯",
+          "desc": "search from GitHub repos.",
+          "path": "/search/github",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query....",
+            "limit": "10"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗼𝗼𝗴𝗹𝗲",
+          "desc": "search from Google información.",
+          "path": "/search/google",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗪𝗮𝗹𝗹𝗽𝗮𝗽𝗲𝗿",
+          "desc": "search from wallpapers.",
+          "path": "/search/wallpaper",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query..",
+            "limit": "Enter límit : 10"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗧𝗶𝗸𝘁𝗼𝗸 𝗣𝗵𝗼𝘁𝗼",
+          "desc": "search from TikTok image.",
+          "path": "/search/tiktok-photo",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗔𝗻𝗴𝗵𝗮𝗺𝗶",
+          "desc": "search from anghami..",
+          "path": "/search/anghami",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        }
+      ]
+    },
+    {
+      "name": "TOOLs",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗩𝗶𝗱𝗲𝗼 𝗘𝗻𝗵𝗮𝗻𝗰𝗲𝗿",
+          "desc": "Convierte videos a alta calidad 2k, 4k.",
+          "path": "/tools/video-enhancer",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥙrᥣ",
+            "resolution": "2k, 4k"
+          }
+        },
+        {
+          "name": "𝗜𝗺𝗮𝗴𝗲 𝗣𝗿𝗼𝗺𝗽𝘁",
+          "desc": "Obten el prompt de una imagen o algo así xd..",
+          "path": "/tools/image-prompt",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "language": "Enter language..."
+          }
+        },
+        {
+          "name": "𝗣𝗮𝘀𝘁𝗲𝗯𝗶𝗻",
+          "desc": "Obten un código de pastebin.com.",
+          "path": "/tools/pastebin",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗧𝗿𝗮𝗻𝘀𝗰𝗿𝗶𝗯𝗲𝗿",
+          "desc": "YouTube transcriber.",
+          "path": "/tools/youtube-transcriber",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "lang": "Enter idioma..."
+          }
+        },
+        {
+          "name": "𝗜𝗺𝗮𝗴𝗲 𝗖𝗼𝗻𝘃𝗲𝗿𝘁",
+          "desc": "convierte una imagen a cualquiera formato ect.",
+          "path": "/tools/image-convert",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..",
+            "to": "Enter formato.."
+          }
+        },
+        {
+          "name": "Upload GitHub",
+          "desc": "txdddddd.",
+          "path": "/tools/github-upload",
+          "method": "POST",
+          "status": true,
+          "params": {
+            "urls": "Enter urls xd"
+          }
+        },
+        {
+          "name": "𝗧𝗿𝗮𝗻𝘀𝗹𝗮𝘁𝗲 𝗚𝗼𝗼𝗴𝗹𝗲",
+          "desc": "translate google.",
+          "path": "/tools/translate",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text",
+            "to": "Enter idioma.."
+          }
+        },
+        {
+          "name": "𝗬𝗼𝘁𝘂𝗯𝗲 𝗜𝗺𝗮𝗴𝗲",
+          "desc": "tetas xd.",
+          "path": "/tools/youtube-image",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..",
+            "mode": "Enter model..."
+          }
+        },
+        {
+          "name": "𝗡𝗼𝘁𝗼 𝗘𝗺𝗼𝗷𝗶",
+          "desc": "create from emoji.",
+          "path": "/tools/emoji",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "emoji": "ᥱm᥆ȷі: 🍜"
+          }
+        },
+        {
+          "name": "𝗦𝗵𝗼𝗿𝘁 𝗟𝗶𝗻𝗸 𝗩2",
+          "desc": "Acortador de link.",
+          "path": "/tools/short",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url.."
+          }
+        },
+        {
+          "name": "𝗤𝗿",
+          "desc": "Genera un qr nose.",
+          "path": "/tools/qr",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text.."
+          }
+        },
+        {
+          "name": "𝗤𝗿 𝗩2",
+          "desc": "Genera un código qr.",
+          "path": "/tools/qr.php",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Enter text..",
+            "size": "Enter size.."
+          }
+        },
+        {
+          "name": "𝗨𝗻𝗯𝗹𝘂𝗿",
+          "desc": "Quita el desenfoque de imágenes",
+          "path": "/tools/unblur",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗨𝗽𝘀𝗰𝗮𝗹𝗲",
+          "desc": "Convierte imagenes a alta calidad",
+          "path": "/tools/upscale",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "scale": "Enter upscale : 2, 3, 4"
+          }
+        },
+        {
+          "name": "𝗦𝘀𝘄𝗲𝗯",
+          "desc": "Captura de pantalla de una web",
+          "path": "/tools/ssweb",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗦𝗵𝗼𝗿𝘁 𝗟𝗶𝗻𝗸",
+          "desc": "Acortador de url.",
+          "path": "/tools/shortlink.php",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥙrᥣ",
+            "id": "ID"
+          }
+        },
+        {
+          "name": "𝗪𝗵𝗮𝘁𝗺𝘂𝘀𝗶𝗰",
+          "desc": "Test",
+          "path": "/tools/whatmusic",
+          "method": "GET",
+          "status": false,
+          "params": {
+            "url": "ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗡𝗽𝗺",
+          "desc": "nose",
+          "path": "/tools/npm",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "text": "Text"
+          }
+        },
+        {
+          "name": "𝗛𝗗 𝗩𝗜𝗗𝗘𝗢",
+          "desc": "Convierte videos a alta calidad 4k.",
+          "path": "/tools/hdvideo",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥙrᥣ",
+            "resolution": "2k, 4k"
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "ANIME",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗟𝘂𝘃𝘆𝗮",
+          "desc": "search from luvya manga. (Nota: es lento el puto endpoint)",
+          "path": "/anime/search/luvya",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗮𝗹𝗹 𝗞𝗼𝗺𝗶𝗸𝗦𝘁𝗮𝘁𝗶𝗼𝗻",
+          "desc": "Download downloaderall komikstation..",
+          "path": "/anime/downloadall/komikstation",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "limit": "Enter limit..",
+            "outdir": "Enter outdir.."
+          }
+        },
+        {
+          "name": "𝗗𝗶𝗿𝗲𝗰𝘁 𝗞𝗼𝗺𝗶𝗸𝗦𝘁𝗮𝘁𝗶𝗼𝗻",
+          "desc": "Download direct komikstation..",
+          "path": "/anime/direct/komikstation",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "filename": "Enter filename..",
+            "outdir": "Enter outdir.."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗞𝗼𝗺𝗶𝗸𝗦𝘁𝗮𝘁𝗶𝗼𝗻",
+          "desc": "Downloader komikstation..",
+          "path": "/anime/download/komikstation",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "outdir": "Enter outdir.."
+          }
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗱 𝗞𝗼𝗺𝗶𝗸𝗦𝘁𝗮𝘁𝗶𝗼𝗻",
+          "desc": "Read komikstation..",
+          "path": "/anime/read/komikstation",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗗𝗲𝘁𝗮𝗶𝗹 𝗞𝗼𝗺𝗶𝗸𝗦𝘁𝗮𝘁𝗶𝗼𝗻",
+          "desc": "Detail komikstation..",
+          "path": "/anime/detail/komikstation",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗞𝗼𝗺𝗶𝗸𝗦𝘁𝗮𝘁𝗶𝗼𝗻",
+          "desc": "Trending komikstation..",
+          "path": "/anime/trending/komikstation",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗞𝗼𝗺𝗶𝗸𝗦𝘁𝗮𝘁𝗶𝗼𝗻",
+          "desc": "Busca contenido de komikstation..",
+          "path": "/anime/search/komikstation",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query..."
+          }
+        },
+        {
+          "name": "𝗗𝗲𝘁𝗮𝗶𝗹 𝗔𝗻𝗶𝗺𝗲𝗮𝘃1",
+          "desc": "Detail animeav1.",
+          "path": "/anime/detail/animeav1",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Aᥒіmᥱ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗔𝗻𝗶𝗺𝗲𝗮𝘃1",
+          "desc": "Descarga contenido de Anime.",
+          "path": "/anime/download/animeav1",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Aᥒіmᥱ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗔𝗻𝗶𝗺𝗲𝗮𝘃1",
+          "desc": "Busca contenido de anime.",
+          "path": "/anime/search/animeav1",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗔𝗻𝗶𝗺𝗲 𝗞𝗼𝗺𝗽𝗶",
+          "desc": "Download contenido de animekompi.",
+          "path": "/anime/download/kompi",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Aᥒіmᥱ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗔𝗻𝗶𝗺𝗲 𝗞𝗼𝗺𝗽𝗶",
+          "desc": "search contendio de animekompi.",
+          "path": "/anime/search/kompi",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝗮𝗻𝗴𝗮",
+          "desc": "search from manga.",
+          "path": "/anime/manga",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗧𝗶𝗼𝗮𝗻𝗶𝗺𝗲",
+          "desc": "Busca contenido de tioanime.",
+          "path": "/anime/search/tioanime",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗟𝗮𝘁𝗮𝗻𝗶𝗺𝗲",
+          "desc": "Busca contenido de latanime.org .",
+          "path": "/anime/search/latanime",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "NSFW (+18)",
+      "status": true,
+      "warning": "Solo para mayores de 18 años",
+      "items": [
+        {
+          "name": "𝗪𝗮𝗶𝗳𝘂",
+          "desc": "Imagenes aleatorias categoría NSFW",
+          "path": "/random/nsfw/waifu",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝗮𝗻𝗴𝗮 18*",
+          "desc": "Buscar contenido en pornhub",
+          "path": "/nsfw/search/manga18",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter query....",
+            "chapter": "Enter page...."
+          } 
+        },
+        {
+          "name": "𝗗𝗲𝘁𝗮𝗶𝗹 𝗠𝗮𝗻𝗴𝗮 18*",
+          "desc": "Detail manga18",
+          "path": "/nsfw/detail/manga18",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "slug": "Example : me-a-guy-lesbian"
+          } 
+        },
+        {
+          "name": "𝗖𝗵𝗮𝗽𝘁𝗲𝗿 𝗠𝗮𝗻𝗴𝗮 18*",
+          "desc": "chapter manga18",
+          "path": "/nsfw/chapter/manga18",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "slug": "Example : me-a-guy-lesbian",
+            "chapter": "Example : chapter-1"
+          } 
+        },
+        {
+          "name": "𝗛𝗼𝗺𝗲 𝗠𝗮𝗻𝗴𝗮 18*",
+          "desc": "Buscar contenido en manga18",
+          "path": "/nsfw/home/manga18",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "page": "Enter page....",
+            "limit": "Enter limit..."
+          } 
+        },
+        {
+          "name": "𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲𝗱 𝗠𝗮𝗻𝗴𝗮 18*",
+          "desc": "completed manga18",
+          "path": "/nsfw/completed/manga18",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "page": "Enter page....",
+            "limit": "Enter limit..."
+          } 
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗫𝘃𝗶𝗱𝗲𝗼𝘀",
+          "desc": "Buscar contenido en Xvideos",
+          "path": "/nsfw/search/xvideos",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          } 
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗫𝘃𝗶𝗱𝗲𝗼𝘀",
+          "desc": "Descarga contenido de Xvideos",
+          "path": "/nsfw/download/xvideos",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "᥊᥎іძᥱ᥆s ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗫𝗻𝘅𝘅",
+          "desc": "Buscar contenido en XNXX",
+          "path": "/nsfw/search/xnxx",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗫𝗻𝘅𝘅",
+          "desc": "Descarga contenido de XNXX",
+          "path": "/nsfw/download/xnxx",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "᥊ᥒ᥊᥊ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗩𝗲𝗼𝗛𝗲𝗻𝘁𝗮𝗶",
+          "desc": "Buscar contenido veohentai",
+          "path": "/nsfw/search/veohentai",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗩𝗲𝗼𝗛𝗲𝗻𝘁𝗮𝗶",
+          "desc": "Descarga contenido veohentai",
+          "path": "/nsfw/download/veohentai",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "һᥱᥒ𝗍ᥲі ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗕𝗼𝗼𝗯𝘀",
+          "desc": "Obtener contenido NSFW de temática boobs.",
+          "path": "/nsfw/boobs",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗬𝘂𝗿𝗶",
+          "desc": "Obtener contenido NSFW de temática yuri.",
+          "path": "/nsfw/yuri",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗟𝗼𝗹𝗶",
+          "desc": "Obtener contenido NSFW de temática loli.",
+          "path": "/nsfw/loli",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗧𝗲𝘁𝗮𝘀",
+          "desc": "Obtener contenido NSFW de temática Tetas.",
+          "path": "/nsfw/tetas",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗛𝗲𝗻𝘁𝗮𝗶",
+          "desc": "Obtener contenido NSFW de temática Tetas.",
+          "path": "/nsfw/hentai",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗣𝗼𝗿𝗻𝗵𝘂𝗯",
+          "desc": "Descarga contenido pornhub.",
+          "path": "/nsfw/download/pornhub",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "һᥱᥒ𝗍ᥲі ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗦𝗲𝗮𝗿𝗰𝗵 𝗣𝗼𝗿𝗻𝗵𝘂𝗯",
+          "desc": "Buscar contenido en pornhub",
+          "path": "/nsfw/search/pornhub",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query...."
+          } 
+        }
+      ]
+    },
+
+    {
+      "name": "STALKING",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗦𝘁𝗮𝗹𝗸 𝗙𝗿𝗲𝗲𝗙𝗶𝗿𝗲",
+          "desc": "Informacion de usuarios de freefire",
+          "path": "/stalk/freefire",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "uid": "Enter ID..."
+          }
+        },
+        {
+          "name": "𝗦𝘁𝗮𝗹𝗸 𝗧𝘄𝗶𝘁𝘁𝗲𝗿",
+          "desc": "Informacion de usuarios de Twitter",
+          "path": "/stalk/twitter",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "user": "ᥙsᥱrᥒᥲmᥱ"
+          }
+        },
+        {
+          "name": "𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗦𝘁𝗮𝗹𝗸",
+          "desc": "Informacion de usuarios de YouTube.",
+          "path": "/stalk/youtube",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "username": "ᥙsᥱrᥒᥲmᥱ"
+          }
+        },
+        {
+          "name": "𝗥𝗼𝗯𝗹𝗼𝘅 𝗦𝘁𝗮𝗹𝗸",
+          "desc": "Informacion de usuarios de Roblox.",
+          "path": "/stalk/roblox",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "user": "ᥙsᥱrᥒᥲmᥱ"
+          }
+        },
+        {
+          "name": "𝗚𝗶𝘁𝗵𝘂𝗯 𝗦𝘁𝗮𝗹𝗸",
+          "desc": "Informacion de usuarios de GitHub",
+          "path": "/stalk/github",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "user": "ᥙsᥱrᥒᥲmᥱ"
+          }
+        },
+        {
+          "name": "𝗧𝗶𝗸𝘁𝗼𝗸 𝗦𝘁𝗮𝗹𝗸",
+          "desc": "Informacion de usuarios de TikTok",
+          "path": "/stalk/tiktok",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "user": "ᥙsᥱrᥒᥲmᥱ"
+          }
+        },
+        {
+          "name": "𝗧𝗶𝗸𝘁𝗼𝗸 𝗦𝘁𝗮𝗹𝗸 𝗩2",
+          "desc": "Informacion de usuarios de TikTok",
+          "path": "/stalk/tiktok/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "user": "ᥙsᥱrᥒᥲmᥱ"
+          }
+        },
+        {
+          "name": "𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺 𝗦𝘁𝗮𝗹𝗸",
+          "desc": "Informacion de usuario de Instagram",
+          "path": "/stalk/instagram",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "user": "ᥙsᥱrᥒᥲmᥱ"
+          }
+        }
+      ]
+    },
+    {
+      "name": "DOWNLOAD",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝗻𝗮𝗽𝘀𝗮𝘃𝗲",
+          "desc": "Downloader from snapsave.app",
+          "path": "/download/snapsave",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "type": "Enter type : instagram, facebook"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝗮𝘃𝗲𝗳𝗿𝗼𝗺 𝗠𝗲𝗱𝗶𝗮",
+          "desc": "Downloader from savefrom.net",
+          "path": "/download/savefrom",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗬𝗧𝗖𝗼𝗻𝘃𝗲𝗿𝘁",
+          "desc": "Downloader from YouTube source : ytconvert.org/.",
+          "path": "/download/ytconvert",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "format": "Enter formato : mp3, mp4,",
+            "quality": "Enter calidad..."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗗𝗲𝗲𝘇𝗲𝗿",
+          "desc": "Downloader from deezer.",
+          "path": "/download/deezer",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗥𝗲𝗱𝗱𝗶𝘁",
+          "desc": "Downloader from reddit.",
+          "path": "/download/reddit",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗗𝗼𝘂𝘆𝗶𝗻",
+          "desc": "Downloader from douyin.",
+          "path": "/download/douyin",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗔𝗽𝗹𝗺𝗮𝘁𝗲",
+          "desc": "Downloader from Applemusic.",
+          "path": "/download/aplmate",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥲ⍴⍴ᥣᥱmᥙsіᥴ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸 𝗣𝗵𝗼𝘁𝗼",
+          "desc": "Downloader from Facebook Photo.",
+          "path": "/download/facebook-photo",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝖿ᥲᥴᥱᑲ᥆᥆k ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗧𝗵𝗿𝗲𝗮𝗱𝘀",
+          "desc": "download from threads.",
+          "path": "/download/threads",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗬𝗼𝘂𝘁𝘂𝗯𝗲",
+          "desc": "Downloader from YouTube.",
+          "path": "/download/ytdl",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter Query....",
+            "format": "Enter format : m⍴3 | m⍴4",
+            "select": {
+              "name": "quality",
+              "label": "seleccione la calidad ",
+              "options": [
+                {"value": "128", "label": "128k"},
+                {"value": "256", "label": "256k"},
+                {"value": "320", "label": "320k"},
+                {"value": "144", "label": "144p (SD)"},
+                {"value": "240", "label": "240p (SD)"},
+                {"value": "360", "label": "360p (SD)"},
+                {"value": "480", "label": "480p (SD)"},
+                {"value": "720", "label": "720p (HD)"},
+                {"value": "1080", "label": "1080 (FHD)"},
+                {"value": "1440", "label": "1440 (GHD)"},
+                {"value": "2160", "label": "2160 (4k)"},
+                {"value": "4320", "label": "4320 (8k)"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗩2",
+          "desc": "Downloader from YouTube.",
+          "path": "/download/ytdl/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "format": "Enter formato : MP3, MP4,",
+            "key": ""
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸",
+          "desc": "Downloader from Facebook.",
+          "path": "/download/facebook",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝖿ᥲᥴᥱᑲ᥆᥆k ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸 𝗩2",
+          "desc": "Downloader from Facebook.",
+          "path": "/download/facebook/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝖿ᥲᥴᥱᑲ᥆᥆k ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸 𝗩3",
+          "desc": "Downloader from Facebook.",
+          "path": "/download/facebook/v3",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝖿ᥲᥴᥱᑲ᥆᥆k ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸 𝗩4",
+          "desc": "Downloader from Facebook.",
+          "path": "/download/facebook/v4",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝖿ᥲᥴᥱᑲ᥆᥆k ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺",
+          "desc": "Downloader from Instagram",
+          "path": "/download/igdl",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "іᥒs𝗍ᥲgrᥲm ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺 𝗩2",
+          "desc": "Downloader from Instagram",
+          "path": "/download/igdl/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "іᥒs𝗍ᥲgrᥲm ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺 𝗩3",
+          "desc": "Downloader from Instagram.",
+          "path": "/download/instagram",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "іᥒs𝗍ᥲgrᥲm ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗠𝗲𝗱𝗶𝗮𝗳𝗶𝗿𝗲",
+          "desc": "Downloader from MediaFire.",
+          "path": "/download/mediafire",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Mᥱძіᥲ𝖿іrᥱ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗖𝗮𝗽𝗰𝘂𝘁",
+          "desc": "Downloader from CapCut.",
+          "path": "/download/capcut",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Cᥲ⍴ᥴᥙ𝗍 ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗧𝘄𝗶𝘁𝘁𝗲𝗿 (X)",
+          "desc": "Downloader from Twitter.",
+          "path": "/download/x",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝗍ᥕі𝗍𝗍ᥱr ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗧𝘄𝗶𝘁𝘁𝗲𝗿 𝗩2",
+          "desc": "Downloader from Twitter (x)",
+          "path": "/download/twitter",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝗍ᥕі𝗍𝗍ᥱr ᥙrᥣ",
+            "type": "Enter type : info - url"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝗻𝗮𝗰𝗸𝗩𝗶𝗱𝗲𝗼",
+          "desc": "Downloader from SnackVideo.",
+          "path": "/download/snackvideo",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "sᥒᥲᥴk᥎іძᥱ᥆ ᥙrᥣ"
+          }
+        },
+        
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗧𝗶𝗸𝘁𝗼𝗸",
+          "desc": "Downloader from TikTok.",
+          "path": "/download/tiktok",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝗍іk𝗍᥆k ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗧𝗶𝗸𝘁𝗼𝗸 𝗩2",
+          "desc": "Downloader from TikTok (titkok.com).",
+          "path": "/download/tiktok",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..",
+            "type": "Enter type.."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗧𝗶𝗸𝘁𝗼𝗸𝗠𝗣3",
+          "desc": "Downloader from Audio TikTok.",
+          "path": "/download/tiktokmp3",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝗍іk𝗍᥆k ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝗽𝗼𝘁𝗶𝗳𝘆",
+          "desc": "Downloader from Spotify.",
+          "path": "/download/spotify",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url..."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝗽𝗼𝘁𝗶𝗳𝘆 𝗩2",
+          "desc": "Downloader from Spotify V2.",
+          "path": "/download/spotify/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "s⍴᥆𝗍і𝖿ᥡ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝗽𝗼𝘁𝗶𝗳𝘆 𝗩3",
+          "desc": "Downloader from Spotify (convertídor oficial de Nexus Light.",
+          "path": "/download/spotify/v3",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "s⍴᥆𝗍і𝖿ᥡ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗣𝗶𝗻𝘁𝗲𝗿𝗲𝘀𝘁",
+          "desc": "Downloader from pinterest.",
+          "path": "/download/pindl.php",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "⍴іᥒ𝗍ᥱrᥱs𝗍 ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝗮𝘃𝗲𝘁𝘂𝗯𝗲",
+          "desc": "Downloader from savetube .",
+          "path": "/download/savetube",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥡ᥆ᥙ𝗍ᥙᑲᥱ ᥙrᥣ",
+            "type": "ᥲᥙძі᥆ | ᥎іძᥱ᥆",
+            "quality": "𝗊ᥙᥲᥣі𝗍ᥡ ᥆⍴𝗍і᥆ᥒ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗙-𝗗𝗿𝗼𝗶𝗱",
+          "desc": "Downloader from f-droid.",
+          "path": "/download/fdroid",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝖿-ძr᥆іძ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗠𝗲𝗴𝗮",
+          "desc": "Downloader from Mega.",
+          "path": "/download/mega",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "mᥱgᥲ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝗼𝘂𝗻𝗱𝗰𝗹𝗼𝘂𝗱",
+          "desc": "Downloader from soundcloud.",
+          "path": "/download/soundcloud",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "s᥆ᥙᥒძᥴᥣ᥆ᥙძ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗦𝗼𝘂𝗻𝗱𝗰𝗹𝗼𝘂𝗱 𝗩2",
+          "desc": "Downloader from soundcloud.",
+          "path": "/download/soundcloud/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url...",
+            "quality": "Enter calidad : 128, '192, 256, 320"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗧𝗲𝗿𝗮𝗯𝗼𝘅",
+          "desc": "Downloader from Terabox.",
+          "path": "/download/terabox",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "𝗍ᥱrᥲᑲ᥆᥊ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗗𝗿𝗮𝗺𝗮𝗯𝗼𝘅",
+          "desc": "Downloader from Dramabox\ntest.",
+          "path": "/download/dramabox",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ძrᥲmᥲᑲ᥆᥊ ᥙrᥣ" 
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗚𝗶𝘁𝗵𝘂𝗯",
+          "desc": "Downloader from repo GitHub.",
+          "path": "/download/gitclone",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "gі𝗍һᥙᑲ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗔𝗽𝗽𝗹𝗲𝗺𝘂𝘀𝗶𝗰",
+          "desc": "Downloader from Applemusic.",
+          "path": "/download/applemusic",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥲ⍴⍴ᥣᥱmᥙsіᥴ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗔𝗽𝗽𝗹𝗲𝗺𝘂𝘀𝗶𝗰 𝗩2",
+          "desc": "Downloader from Applemusic.",
+          "path": "/download/applemusic/v2",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥲ⍴⍴ᥣᥱmᥙsіᥴ ᥙrᥣ",
+            "quality": "m4a, 128, 192, 256, 320, 64"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗠𝗣3",
+          "desc": "Downloader from Ytmp4.",
+          "path": "/download/ytaudio",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥡ᥆ᥙ𝗍ᥙᑲᥱ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗠𝗣4",
+          "desc": "Downloader from Ytmp3.",
+          "path": "/download/ytvideo",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥡ᥆ᥙ𝗍ᥙᑲᥱ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗠𝗣3 𝗩2",
+          "desc": "Downloader from YouTube V2.",
+          "path": "/download/ytmp3",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥡ᥆ᥙ𝗍ᥙᑲᥱ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗠𝗣4 𝗩2",
+          "desc": "Downloader from YouTube V2.",
+          "path": "/download/ytmp4",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "ᥡ᥆ᥙ𝗍ᥙᑲᥱ ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗔𝗶𝗼",
+          "desc": "Download from aio",
+          "path": "/download/aio",
+          "method": "GET",
+          "params": {
+            "url": "ᥙrᥣ",
+            "format": "Enter format..."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗔𝗶𝗼 V2",
+          "desc": "Download from aio platforms: Tiktok, Douyin, Capcut, Threads, Instagram, Facebook, Espn, Pinterest, imdb, imgur, ifunny, Izlesene, Reddit, Youtube, Twitter, Vimeo, Snapchat, Bilibili, Dailymotion, Sharechat, Likee, Linkedin, Tumblr, Hipi, Telegram, Getstickerpack, Bitchute, Febspot, 9GAG, ok.ru, Rumble, Streamable, Ted, SohuTv, Xvideos, Xnxx, Xiaohongshu, Ixigua, Weibo, Miaopai, Meipai, Xiaoying, National Video, Yingke, Sina, Vk-vkvideo, Soundcloud, Mixcloud, Spotify, Zingmp3, Bandcamp.",
+          "path": "/download/aio/v2",
+          "method": "GET",
+          "params": {
+            "url": "ᥙrᥣ"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗔𝗽𝗸𝗽𝘂𝗿𝗲",
+          "desc": "download from apkpure.",
+          "path": "/download/apkpure",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url.."
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗗𝗿𝗶𝘃𝗲",
+          "desc": "download from gdrive.",
+          "path": "/download/gdrive",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter url.."
+          }
+        }
+      ]
+    },
+    {
+      "name": "REACTION NSFW",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗽𝗮𝗻𝗸",
+          "desc": "❀ Reaction nsfw style : spank.",
+          "path": "/reaction/nsfw/spank",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗨𝗻𝗱𝗿𝗲𝘀𝘀",
+          "desc": "❀ Reaction nsfw style : undress.",
+          "path": "/reaction/nsfw/undress",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗬𝘂𝗿𝗶",
+          "desc": "❀ Reaction nsfw style : Yuri.",
+          "path": "/reaction/nsfw/yuri",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗶𝘅𝗻𝗶𝗻𝗲",
+          "desc": "❀ Reaction nsfw style : sixnine.",
+          "path": "/reaction/nsfw/sixnine",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗔𝗻𝗮𝗹",
+          "desc": "❀ Reaction nsfw style : anal.",
+          "path": "/reaction/nsfw/anal",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗙𝘂𝗰𝗸",
+          "desc": "❀ Reaction nsfw style : fuck.",
+          "path": "/reaction/nsfw/fuck",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝘂𝗰𝗸𝗯𝗼𝗼𝗯𝘀",
+          "desc": "❀ Reaction nsfw style : suckboobs.",
+          "path": "/reaction/nsfw/suckboobs",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝘂𝗺𝗺𝗼𝘁𝗵",
+          "desc": "Reaction nsfw style : cummoth.",
+          "path": "/reaction/nsfw/cummoth",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝘂𝗺𝘀𝗵𝗼𝘁",
+          "desc": "❀ Reaction nsfw style : cumshot.",
+          "path": "/reaction/nsfw/cumshot",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝘂𝗺",
+          "desc": "Reaction nsfw style : cum.",
+          "path": "/reaction/nsfw/cum",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗟𝗶𝗰𝗸𝗳𝘂𝘁𝗮𝗻𝗮𝗿𝗶",
+          "desc": "❀ Reaction nsfw style : lickfutanari.",
+          "path": "/reaction/nsfw/lickfutanari",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗟𝗶𝗰𝗸𝗱𝗶𝗰𝗸",
+          "desc": "Reaction nsfw style : lickdick.",
+          "path": "/reaction/nsfw/lickdick",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗟𝗶𝗰𝗸𝗮𝘀𝘀",
+          "desc": "❀ Reaction nsfw style : lickass.",
+          "path": "/reaction/nsfw/lickass",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗛𝗮𝗻𝗱𝗷𝗼𝗯",
+          "desc": "Reaction nsfw style : handjob.",
+          "path": "/reaction/nsfw/handjob",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗚𝗿𝗼𝗽𝗲",
+          "desc": "❀ Reaction nsfw style : grope.",
+          "path": "/reaction/nsfw/grope",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗚𝗿𝗮𝗯𝗯𝗼𝗼𝗯𝘀",
+          "desc": "Reaction nsfw style : grabboobs.",
+          "path": "/reaction/nsfw/grabboobs",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝗹𝗼𝘄𝗷𝗼𝗯",
+          "desc": "❀ Reaction nsfw style : blowjob.",
+          "path": "/reaction/nsfw/blowjob",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝗼𝗼𝗯𝗷𝗼𝗯",
+          "desc": "Reaction nsfw style : boobjob.",
+          "path": "/reaction/nsfw/boobjob",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗙𝗮𝗽",
+          "desc": "❀ Reaction nsfw style : fap.",
+          "path": "/reaction/nsfw/fap",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗙𝗼𝗼𝘁𝗷𝗼𝗯",
+          "desc": "Reaction nsfw style : footjob.",
+          "path": "/reaction/nsfw/footjob",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗙𝗶𝗻𝗴𝗲𝗿𝗶𝗻𝗴",
+          "desc": "❀ Reaction nsfw style : fingering.",
+          "path": "/reaction/nsfw/fingering",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝗿𝗲𝗮𝗺𝗽𝗶𝗲",
+          "desc": "❀ Reaction nsfw style : creampie.",
+          "path": "/reaction/nsfw/creampie",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗙𝗮𝗰𝗲𝘀𝗶𝘁𝘁𝗶𝗻𝗴",
+          "desc": "Reaction nsfw style : facesitting.",
+          "path": "/reaction/nsfw/facesitting",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗙𝘂𝘁𝗮𝗻𝗮𝗿𝗶",
+          "desc": "❀ Reaction nsfw style : futanari.",
+          "path": "/reaction/nsfw/futanari",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗣𝗲𝗴𝗴𝗶𝗻𝗴",
+          "desc": "Reaction nsfw style : pegging.",
+          "path": "/reaction/nsfw/pegging",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝗼𝗻𝗱𝗮𝗴𝗲",
+          "desc": "Reaction nsfw style : bondage.",
+          "path": "/reaction/nsfw/bondage",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗗𝗲𝗲𝗽𝘁𝗵𝗿𝗼𝗮𝘁",
+          "desc": "❀ Reaction nsfw style : deepthroat.",
+          "path": "/reaction/nsfw/deepthroat",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗧𝗵𝗶𝗴𝗵𝗷𝗼𝗯",
+          "desc": "Reaction nsfw style : thighjob.",
+          "path": "/reaction/nsfw/thighjob",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗬𝗮𝗼𝗶",
+          "desc": "❀ Reaction nsfw style : yaoi.",
+          "path": "/reaction/nsfw/yaoi",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝘂𝗸𝗸𝗮𝗸𝗲",
+          "desc": "Reaction nsfw style : bukkake.",
+          "path": "/reaction/nsfw/bukkake",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗢𝗿𝗴𝘆",
+          "desc": "Reaction nsfw style : orgy.",
+          "path": "/reaction/nsfw/orgy",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "❀ 𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗾𝘂𝗶𝗿𝘁𝗶𝗻𝗴",
+          "desc": "Reaction nsfw style : squirting.",
+          "path": "/reaction/nsfw/squirting",
+          "method": "GET",
+          "status": true
+        }
+      ]
+    },
+    {
+      "name": "REACTION",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗣𝗲𝗲𝗸",
+          "desc": "Anime-style reaction: peek",
+          "path": "/reaction/peek",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝗼𝗺𝗳𝗼𝗿𝘁",
+          "desc": "Anime-style reaction: comfort",
+          "path": "/reaction/comfort",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗧𝗵𝗶𝗻𝗸𝗵𝗮𝗿𝗱",
+          "desc": "Anime-style reaction: thinkhard",
+          "path": "/reaction/thinkhard",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝘂𝗿𝗶𝗼𝘂𝘀",
+          "desc": "Anime-style reaction: curious",
+          "path": "/reaction/curious",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗻𝗶𝗳𝗳",
+          "desc": "Anime-style reaction: sniff",
+          "path": "/reaction/sniff",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝘁𝗮𝗿𝗲",
+          "desc": "Anime-style reaction: stare",
+          "path": "/reaction/stare",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗧𝗿𝗶𝗽",
+          "desc": "Anime-style reaction: trip",
+          "path": "/reaction/trip",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝗹𝗼𝘄𝗸𝗶𝘀𝘀",
+          "desc": "Anime-style reaction: blowkiss",
+          "path": "/reaction/blowkiss",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗻𝘂𝗴𝗴𝗹𝗲",
+          "desc": "Anime-style reaction: snuggle",
+          "path": "/reaction/snuggle",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝗮𝗹𝗹",
+          "desc": "Anime-style reaction: call",
+          "path": "/reaction/call",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗗𝗿𝗮𝘄",
+          "desc": "Anime-style reaction: draw",
+          "path": "/reaction/draw",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗚𝗮𝗺𝗮𝗶𝗻𝗴",
+          "desc": "Anime-style reaction: gaming",
+          "path": "/reaction/gaming",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗛𝗲𝗮𝘁",
+          "desc": "Anime-style reaction: heat",
+          "path": "/reaction/heat",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗝𝘂𝗺𝗽",
+          "desc": "Anime-style reaction: jump",
+          "path": "/reaction/jump",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗡𝗼𝗽𝗲",
+          "desc": "Anime-style reaction: nope",
+          "path": "/reaction/nope",
+          "method": "GET",
+          "status": true
+        },
+        
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗣𝘂𝘀𝗵",
+          "desc": "Anime-style reaction: push",
+          "path": "/reaction/push",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗰𝗿𝗲𝗮𝗺",
+          "desc": "Anime-style reaction: scream",
+          "path": "/reaction/scream",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗧𝗶𝗰𝗸𝗹𝗲",
+          "desc": "Anime-style reaction: tickle",
+          "path": "/reaction/tickle",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗶𝗻𝗴",
+          "desc": "Anime-style reaction: sing",
+          "path": "/reaction/sing",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝘂𝗱𝗱𝗹𝗲",
+          "desc": "Anime-style reaction: cuddle",
+          "path": "/reaction/cuddle",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗗𝗮𝗻𝗰𝗲",
+          "desc": "Anime-style reaction: dance",
+          "path": "/reaction/dance",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗹𝗮𝗽",
+          "desc": "Anime-style reaction: slap",
+          "path": "/reaction/slap",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗟𝗶𝗰𝗸",
+          "desc": "Anime-style reaction: lick",
+          "path": "/reaction/lick",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝗿𝘆",
+          "desc": "Anime-style reaction: cry",
+          "path": "/reaction/cry",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝗼𝗻𝗸",
+          "desc": "Anime-style reaction: bonk",
+          "path": "/reaction/bonk",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝗿𝗶𝗻𝗴𝗲",
+          "desc": "Anime-style reaction: cringe",
+          "path": "/reaction/cringe",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗵𝗮𝗻𝗱𝗵𝗼𝗹𝗱",
+          "desc": "Anime-style reaction: handhold",
+          "path": "/reaction/handhold",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗛𝗶𝗴𝗵𝗳𝗶𝘃𝗲",
+          "desc": "Anime-style reaction: highfive",
+          "path": "/reaction/highfive",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗺𝗶𝗹𝗲",
+          "desc": "Anime-style reaction: smile",
+          "path": "/reaction/smile",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗺𝘂𝗴",
+          "desc": "Anime-style reaction: smug",
+          "path": "/reaction/smug",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝗮𝘁𝗵",
+          "desc": "Anime-style reaction: bath",
+          "path": "/reaction/bath",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗪𝗮𝘃𝗲",
+          "desc": "Anime-style reaction: wave",
+          "path": "/reaction/wave",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝗹𝘂𝘀𝗵",
+          "desc": "Anime-style reaction: blush",
+          "path": "/reaction/blush",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗩𝗶𝘁𝗲",
+          "desc": "Anime-style reaction: bite",
+          "path": "/reaction/bite",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝘂𝗹𝗹𝘆",
+          "desc": "Anime-style reaction: bully",
+          "path": "/reaction/bully",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗛𝗮𝗽𝗽𝘆",
+          "desc": "Anime-style reaction: happy",
+          "path": "/reaction/happy",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗣𝗮𝘁",
+          "desc": "Anime-style reaction: pat",
+          "path": "/reaction/pat",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗪𝗶𝗻𝗸",
+          "desc": "Anime-style reaction: wink",
+          "path": "/reaction/wink",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗘𝗮𝘁",
+          "desc": "Anime-style reaction: eat",
+          "path": "/reaction/eat",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "Hug",
+          "desc": "Anime-style reaction: hug",
+          "path": "/reaction/hug",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗪𝗮𝗹𝗸",
+          "desc": "Anime-style reaction: walk",
+          "path": "/reaction/walk",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗧𝗵𝗶𝗻𝗸",
+          "desc": "Anime-style reaction: think",
+          "path": "/reaction/think",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝘁𝗲𝗽",
+          "desc": "Anime-style reaction: step",
+          "path": "/reaction/step",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗽𝗶𝘁",
+          "desc": "Anime-style reaction: spit",
+          "path": "/reaction/spit",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗺𝗼𝗸𝗲",
+          "desc": "Anime-style reaction: smoke",
+          "path": "/reaction/smoke",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗹𝗲𝗲𝗽",
+          "desc": "Anime-style reaction: sleep",
+          "path": "/reaction/sleep",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗵𝘆",
+          "desc": "Anime-style reaction: shy",
+          "path": "/reaction/shy",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗲𝗱𝘂𝗰𝗲",
+          "desc": "Anime-style reaction: seduce",
+          "path": "/reaction/seduce",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗰𝗮𝗿𝗲𝗱",
+          "desc": "Anime-style reaction: scared",
+          "path": "/reaction/scared",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗦𝗮𝗱",
+          "desc": "Anime-style reaction: sad",
+          "path": "/reaction/sad",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗥𝘂𝗻",
+          "desc": "Anime-style reaction: run",
+          "path": "/reaction/run",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗣𝘂𝗻𝗰𝗵",
+          "desc": "Anime-style reaction: punch",
+          "path": "/reaction/punch",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗣𝗼𝘂𝘁",
+          "desc": "Anime-style reaction: pout",
+          "path": "/reaction/pout",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗟𝗼𝘃𝗲",
+          "desc": "Anime-style reaction: love",
+          "path": "/reaction/love",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗟𝗼𝘂𝗴𝗵",
+          "desc": "Anime-style reaction: laugh",
+          "path": "/reaction/laugh",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗞𝗶𝘀𝘀𝗰𝗵𝗲𝗲𝗸",
+          "desc": "Anime-style reaction: kisscheek",
+          "path": "/reaction/kisscheek",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗜𝗺𝗽𝗿𝗲𝗴𝗻𝗮𝘁𝗲",
+          "desc": "Anime-style reaction: impregnate",
+          "path": "/reaction/impregnate",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝗼𝗹𝗱",
+          "desc": "Anime-style reaction: cold",
+          "path": "/reaction/cold",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗗𝗿𝘂𝗻𝗸",
+          "desc": "Anime-style reaction: drunk",
+          "path": "/reaction/drunk",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗗𝗿𝗮𝗺𝗮𝘁𝗶𝗰",
+          "desc": "Anime-style reaction: dramatic",
+          "path": "/reaction/dramatic",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝗼𝗳𝗳𝗲𝗲",
+          "desc": "Anime-style reaction: coffee",
+          "path": "/reaction/coffee",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗖𝗹𝗮𝗽",
+          "desc": "Anime-style reaction: clap",
+          "path": "/reaction/clap",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝗼𝗿𝗲𝗱",
+          "desc": "Anime-style reaction: bored",
+          "path": "/reaction/bored",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗕𝗹𝗲𝗵",
+          "desc": "Anime-style reaction: Bleh",
+          "path": "/reaction/bleh",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗔𝗻𝗴𝗿𝘆",
+          "desc": "Anime-style reaction: angry",
+          "path": "/reaction/angry",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗞𝗶𝗹𝗹",
+          "desc": "Anime-style reaction: kill",
+          "path": "/reaction/kill",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗞𝗶𝘀𝘀",
+          "desc": "Anime-style reaction: Kiss",
+          "path": "/reaction/kiss",
+          "method": "GET",
+          "status": true
+        }
+      ]
+    },
+    {
+      "name": "PLAY",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗦𝗼𝘂𝗻𝗱𝗰𝗹𝗼𝘂𝗱 𝗣𝗹𝗮𝘆",
+          "desc": "Downloader from SoundCloud.",
+          "path": "/api/play/soundcloud",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter q..."
+          }
+        },
+        {
+          "name": "𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗣𝗹𝗮𝘆",
+          "desc": "Downloader from YouTube.",
+          "path": "/api/play/youtube",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter q...",
+            "format": "Enter Format : audio: 96, 128, 256, 320 vídeo : 144, 240, 360, 720, 1080",
+            "proxy": "true, false"
+          }
+        },
+        {
+          "name": "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗗𝗲𝗲𝘇𝗲𝗿 𝗣𝗹𝗮𝘆",
+          "desc": "Downloader from deezer.",
+          "path": "/api/play/deezer",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "q": "Enter q...",
+            "format": "Enter Format : mp3, flac"
+          }
+        },
+        {
+          "name": "𝗗𝗲𝘁𝗮𝗶𝗹 𝗗𝗲𝗲𝘇𝗲𝗿",
+          "desc": "Para que sirve este para obtener el audio xd ya que el endpoint de arriba está xD.",
+          "path": "/api/play/detail-deezer",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "url": "Enter example : https://up1.sr00.workers.dev/file/Hps4VZgT7ykOcQbVHZHu..."
+          }
+        }
+      ]
+    },
+    {
+      "name": "NEWS",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗗𝗲𝘁𝗶𝗸",
+          "desc": "nose jsjsjs.",
+          "path": "/news/detik",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗞𝗼𝗻𝘁𝗮𝗻",
+          "desc": "xd.",
+          "path": "/news/kontan",
+          "method": "GET",
+          "status": true
+        }
+      ]
+    },
+    {
+      "name": "API STATUS",
+      "status": true,
+      "items": [
+        {
+          "name": "𝗦𝘁𝗮𝘁𝘂𝘀 𝗜𝗻𝗳𝗼 𝘂𝘀𝗲𝗿",
+          "desc": "status user.",
+          "path": "/api/status-user",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗦𝘁𝗮𝘁𝘂𝘀 𝗣𝗶𝗻𝗴",
+          "desc": "status free api ping.",
+          "path": "/api/ping",
+          "method": "GET",
+          "status": true
+        },
+        {
+          "name": "𝗦𝘁𝗮𝘁𝘂𝘀 𝗧𝗼𝗽 𝗘𝗻𝗱𝗽𝗼𝗶𝗻𝘁𝘀",
+          "desc": "api top endpoints.",
+          "path": "/api/top-endpoints",
+          "method": "GET",
+          "status": true,
+          "params": {
+            "limit": "Enter limit..."
+          }
+        }
+      ]
+    }
+  ]
+}

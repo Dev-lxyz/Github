@@ -1,0 +1,89 @@
+module.exports = function(app) {
+
+  const ADMIN_KEY = "xd"
+
+  app.get("/admin/ratelimit", async (req, res) => {
+
+    try {
+
+      const { key, ip, action, limit } = req.query
+
+
+      if (key !== ADMIN_KEY) {
+        return res.status(403).json({
+          status: false,
+          message: "Invalid key"
+        })
+      }
+
+
+      if (!ip) {
+        return res.status(400).json({
+          status: false,
+          message: "Falta ?ip="
+        })
+      }
+
+
+      // 🔓 quitar 429 de la IP
+      if (action === "reset") {
+
+        delete userRequests[ip]
+
+        db.users = userRequests
+        saveDB()
+
+        return res.json({
+          status: true,
+          message: "IP desbloqueada correctamente",
+          ip
+        })
+      }
+
+
+      // 🚀 subir limite para esa IP
+      if (limit) {
+
+        if (!userRequests[ip]) {
+          userRequests[ip] = {
+            date: new Date()
+              .toISOString()
+              .split("T")[0],
+            count: 0
+          }
+        }
+
+
+        userRequests[ip].limit = Number(limit)
+
+        db.users = userRequests
+        saveDB()
+
+
+        return res.json({
+          status: true,
+          message: "Limite personalizado agregado",
+          ip,
+          limit: Number(limit)
+        })
+      }
+
+
+      return res.json({
+        status:false,
+        message:"Usa action=reset o limit="
+      })
+
+
+    } catch(e) {
+
+      res.status(500).json({
+        status:false,
+        message:e.message
+      })
+
+    }
+
+  })
+
+}

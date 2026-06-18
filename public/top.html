@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Endpoints</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:#fff;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+border:none;
+outline:none;
+border-radius:10px;
+margin-top:10px;
+background:#334155;
+color:white;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+background:#3b82f6;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+opacity:.9;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th,td{
+padding:12px;
+text-align:left;
+border-bottom:1px solid #334155;
+}
+
+th{
+background:#334155;
+}
+
+.status-ok{
+color:#22c55e;
+}
+
+.status-error{
+color:#ef4444;
+}
+
+.url{
+color:#38bdf8;
+word-break:break-all;
+margin-top:10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+<h2>Top Endpoints API</h2>
+
+<p class="url" id="apiUrl"></p>
+
+<input
+type="number"
+id="limit"
+placeholder="Límite"
+value="10"
+/>
+
+<button onclick="loadData()">
+Consultar
+</button>
+</div>
+
+<div class="card">
+<table id="table">
+<thead>
+<tr>
+<th>Ruta</th>
+<th>Hits</th>
+<th>Errores</th>
+<th>MS</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="5">Sin datos</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<script>
+
+const baseURL =
+`${location.protocol}//${location.host}`;
+
+document.getElementById("apiUrl").innerText =
+`${baseURL}/api/top-endpoints`;
+
+async function loadData(){
+
+const limit =
+document.getElementById("limit").value || 10;
+
+try{
+
+const res = await fetch(
+`${baseURL}/api/top-endpoints`,
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+limit:Number(limit)
+})
+}
+);
+
+const data = await res.json();
+
+const tbody =
+document.querySelector("#table tbody");
+
+if(!data.status){
+tbody.innerHTML =
+`<tr><td colspan="5">${data.error}</td></tr>`;
+return;
+}
+
+tbody.innerHTML = "";
+
+data.top.forEach(item=>{
+
+tbody.innerHTML += `
+<tr>
+<td>${item.router}</td>
+<td>${item.count}</td>
+<td>${item.errors}</td>
+<td>${item.ms} ms</td>
+<td class="${
+item.status >= 400
+? 'status-error'
+: 'status-ok'
+}">
+${item.status}
+</td>
+</tr>
+`;
+
+});
+
+}catch(err){
+
+document.querySelector("#table tbody")
+.innerHTML =
+`<tr><td colspan="5">${err.message}</td></tr>`;
+
+}
+
+}
+
+loadData();
+
+</script>
+
+</body>
+</html>

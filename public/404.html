@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>404 — Yume API</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne+Mono&family=Syne:wght@400;700&display=swap"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      --bg:#060609;
+      --accent:#b97cfc;
+      --accent2:#5eead4;
+      --text:#ddddf0;
+      --muted:#525270;
+      --line:rgba(255,255,255,.06);
+    }
+
+    html,body{
+      height:100%;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Syne',sans-serif;
+      overflow:hidden;
+    }
+
+    /* CANVAS */
+    canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+    /* GLITCH BIG NUMBER */
+    .wrap{
+      position:relative;z-index:1;
+      height:100vh;
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:center;
+      gap:0;
+      text-align:center;
+      padding:20px;
+    }
+
+    .num{
+      font-family:'Bebas Neue',cursive;
+      font-size:clamp(8rem,28vw,22rem);
+      line-height:.85;
+      color:var(--accent);
+      position:relative;
+      letter-spacing:.04em;
+      animation:flicker 4s infinite;
+      user-select:none;
+    }
+
+    /* Glitch layers */
+    .num::before,
+    .num::after{
+      content:'404';
+      position:absolute;
+      inset:0;
+      font-family:'Bebas Neue',cursive;
+    }
+    .num::before{
+      color:var(--accent2);
+      clip-path:polygon(0 30%,100% 30%,100% 50%,0 50%);
+      animation:glitch-a 3.5s infinite;
+    }
+    .num::after{
+      color:#f87171;
+      clip-path:polygon(0 60%,100% 60%,100% 75%,0 75%);
+      animation:glitch-b 3.5s infinite;
+    }
+
+    @keyframes glitch-a{
+      0%,90%,100%{transform:translate(0)}
+      91%{transform:translate(-4px,1px)}
+      93%{transform:translate(4px,-1px)}
+      95%{transform:translate(-2px,2px)}
+      97%{transform:translate(0)}
+    }
+    @keyframes glitch-b{
+      0%,88%,100%{transform:translate(0)}
+      89%{transform:translate(4px,2px)}
+      91%{transform:translate(-4px,-1px)}
+      93%{transform:translate(2px,1px)}
+      95%{transform:translate(0)}
+    }
+    @keyframes flicker{
+      0%,95%,100%{opacity:1}
+      96%{opacity:.85}
+      97%{opacity:1}
+      98%{opacity:.7}
+      99%{opacity:1}
+    }
+
+    .label{
+      font-family:'Syne Mono',monospace;
+      font-size:clamp(.6rem,2vw,.85rem);
+      letter-spacing:.45em;
+      color:var(--muted);
+      text-transform:uppercase;
+      margin-top:12px;
+      animation:fadeUp .8s .2s ease both;
+    }
+
+    .msg{
+      font-size:clamp(1rem,3vw,1.4rem);
+      font-weight:700;
+      color:var(--text);
+      margin-top:18px;
+      animation:fadeUp .8s .35s ease both;
+    }
+
+    .sub{
+      font-family:'Syne Mono',monospace;
+      font-size:.7rem;
+      color:var(--muted);
+      letter-spacing:.15em;
+      margin-top:8px;
+      animation:fadeUp .8s .45s ease both;
+    }
+
+    .actions{
+      display:flex;gap:12px;margin-top:36px;
+      animation:fadeUp .8s .55s ease both;
+    }
+
+    .btn{
+      font-family:'Syne Mono',monospace;
+      font-size:.65rem;letter-spacing:.22em;
+      padding:10px 24px;border-radius:8px;
+      text-decoration:none;
+      transition:all .2s;
+      cursor:pointer;border:none;
+    }
+    .btn-primary{
+      background:var(--accent);color:#060609;
+      box-shadow:0 0 24px rgba(185,124,252,.35);
+    }
+    .btn-primary:hover{
+      background:#d0a4ff;
+      box-shadow:0 0 36px rgba(185,124,252,.5);
+      transform:translateY(-2px);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--accent2);
+      border:1px solid rgba(94,234,212,.3);
+    }
+    .btn-ghost:hover{
+      background:var(--accent2);
+      color:#060609;
+      box-shadow:0 0 24px rgba(94,234,212,.3);
+      transform:translateY(-2px);
+    }
+
+    /* divider line */
+    .divider{
+      width:1px;height:60px;
+      background:linear-gradient(to bottom,transparent,var(--accent),transparent);
+      margin-top:48px;
+      animation:fadeUp .8s .65s ease both;
+    }
+
+    .footer-tag{
+      font-family:'Syne Mono',monospace;
+      font-size:.54rem;letter-spacing:.25em;
+      color:var(--muted);margin-top:16px;
+      animation:fadeUp .8s .7s ease both;
+    }
+    .footer-tag em{color:var(--accent2);font-style:normal}
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(16px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    /* scan line overlay */
+    .scan{
+      position:fixed;inset:0;z-index:0;pointer-events:none;
+      background:repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,.08) 2px,
+        rgba(0,0,0,.08) 4px
+      );
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+<div class="scan"></div>
+
+<div class="wrap">
+  <div class="num">404</div>
+  <p class="label">❀ Yume REST API</p>
+  <p class="msg">Page not found</p>
+  <p class="sub">The route you're looking for doesn't exist or was removed.</p>
+
+  <div class="actions">
+    <a href="/" class="btn btn-primary">GO HOME</a>
+    <a href="/docs" class="btn btn-ghost">DOCS</a>
+  </div>
+
+  <div class="divider"></div>
+  <p class="footer-tag">© Powered by <em>I'm shadow</em></p>
+</div>
+
+<script>
+  const canvas = document.getElementById('bg')
+  const ctx    = canvas.getContext('2d')
+  let W, H, pts = []
+
+  const resize = () => { W = canvas.width = innerWidth; H = canvas.height = innerHeight }
+  const init   = () => {
+    pts = []
+    for (let i = 0; i < 50; i++) pts.push({
+      x: Math.random()*W, y: Math.random()*H,
+      r: Math.random()*1.2+.3,
+      vx:(Math.random()-.5)*.22, vy:(Math.random()-.5)*.22,
+      a: Math.random()*.6+.2
+    })
+  }
+
+  const draw = () => {
+    ctx.clearRect(0,0,W,H)
+    // grid
+    ctx.strokeStyle='rgba(185,124,252,.025)'; ctx.lineWidth=1
+    for(let x=0;x<W;x+=66){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+    for(let y=0;y<H;y+=66){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
+    // particles
+    pts.forEach(p=>{
+      p.x+=p.vx; p.y+=p.vy
+      if(p.x<0)p.x=W; if(p.x>W)p.x=0
+      if(p.y<0)p.y=H; if(p.y>H)p.y=0
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
+      ctx.fillStyle=`rgba(94,234,212,${p.a*.4})`; ctx.fill()
+    })
+    requestAnimationFrame(draw)
+  }
+
+  resize(); init(); draw()
+  window.addEventListener('resize',()=>{resize();init()})
+</script>
+</body>
+</html>

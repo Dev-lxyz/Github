@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Upload</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:#fff;
+padding:20px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+.title{
+font-size:35px;
+font-weight:bold;
+margin-bottom:10px;
+background:linear-gradient(90deg,#00ff88,#00bfff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.desc{
+color:#999;
+margin-bottom:20px;
+line-height:1.5;
+}
+
+textarea{
+width:100%;
+height:220px;
+background:#121212;
+border:1px solid #222;
+outline:none;
+resize:none;
+border-radius:18px;
+padding:18px;
+color:#fff;
+font-size:15px;
+margin-bottom:15px;
+}
+
+textarea:focus{
+border-color:#00ff88;
+box-shadow:0 0 20px rgba(0,255,136,.2);
+}
+
+.buttons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+button{
+border:none;
+outline:none;
+padding:13px 18px;
+border-radius:14px;
+font-weight:bold;
+cursor:pointer;
+transition:.2s;
+}
+
+button:hover{
+transform:scale(1.04);
+}
+
+.upload{
+background:#00ff88;
+color:#000;
+}
+
+.clear{
+background:#ff3b3b;
+color:#fff;
+}
+
+.retry{
+background:#ffb300;
+color:#000;
+}
+
+.status{
+margin-bottom:15px;
+font-weight:bold;
+color:#00ff88;
+}
+
+.results{
+display:grid;
+gap:15px;
+}
+
+.card{
+background:#141414;
+border:1px solid #222;
+border-radius:18px;
+padding:18px;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+margin-bottom:12px;
+flex-wrap:wrap;
+}
+
+.badge{
+background:#00ff88;
+color:#000;
+padding:5px 12px;
+border-radius:999px;
+font-size:12px;
+font-weight:bold;
+}
+
+.error{
+background:#ff3b3b;
+color:#fff;
+}
+
+.urlbox{
+background:#0b0b0b;
+border:1px solid #222;
+padding:14px;
+border-radius:14px;
+margin-top:12px;
+font-size:14px;
+line-height:1.7;
+word-break:break-all;
+white-space:pre-wrap;
+}
+
+.actions{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.copyBtn{
+background:#00bfff;
+color:#fff;
+}
+
+.openBtn{
+background:#222;
+color:#fff;
+text-decoration:none;
+padding:12px 15px;
+border-radius:12px;
+font-size:14px;
+}
+
+.footer{
+margin-top:30px;
+text-align:center;
+color:#666;
+}
+
+.loader{
+width:18px;
+height:18px;
+border:3px solid #333;
+border-top:3px solid #00ff88;
+border-radius:50%;
+display:inline-block;
+animation:spin 1s linear infinite;
+vertical-align:middle;
+margin-right:8px;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="title">
+GitHub Upload Tool
+</div>
+
+<div class="desc">
+Acepta URLs normales o así:
+<br><br>
+
+"https://cdn.com/1.mp4",
+"https://cdn.com/2.mp4"
+
+<br><br>
+
+Máximo 10 URLs.
+</div>
+
+<textarea id="urls" placeholder='"https://cdn.com/1.mp4",
+"https://cdn.com/2.mp4"'></textarea>
+
+<div class="buttons">
+<button class="upload" onclick="uploadFiles()">
+Upload
+</button>
+
+<button class="retry" onclick="retryFailed()">
+Retry Failed
+</button>
+
+<button class="clear" onclick="clearAll()">
+Clear
+</button>
+</div>
+
+<div class="status" id="status"></div>
+
+<div class="results" id="results"></div>
+
+<div class="footer">
+★︎ ɪ'ᴍ sʜᴀᴅᴏᴡ (シャドウ)
+</div>
+
+</div>
+
+<script>
+
+const API =
+"https://nexus-light.onrender.com/tools/github-upload";
+
+let failedUrls = [];
+
+async function uploadFiles(){
+
+const input =
+document.getElementById("urls").value.trim();
+
+const status =
+document.getElementById("status");
+
+const results =
+document.getElementById("results");
+
+if(!input){
+alert("Pon URLs");
+return;
+}
+
+results.innerHTML = "";
+failedUrls = [];
+
+/*
+ACEPTA:
+
+"url",
+'url',
+url
+url,url
+salto línea
+*/
+
+let urls =
+input.match(/https?:\/\/[^\s'",]+/g) || [];
+
+urls = [...new Set(urls)];
+
+if(urls.length > 10){
+alert("Máximo 10 URLs");
+return;
+}
+
+status.innerHTML =
+`<span class="loader"></span>Subiendo ${urls.length} archivos...`;
+
+try{
+
+const endpoint =
+`${API}?urls=${encodeURIComponent(urls.join(", "))}`;
+
+const res = await fetch(endpoint);
+const data = await res.json();
+
+status.innerHTML =
+`✅ ${data.total} archivos subidos`;
+
+renderFormattedBlock(data.results);
+
+data.results.forEach(item=>{
+
+const card =
+document.createElement("div");
+
+card.className = "card";
+
+if(item.status){
+
+card.innerHTML = `
+
+<div class="top">
+<div>
+<b>${item.result.name}</b>
+</div>
+
+<div class="badge">
+SUCCESS
+</div>
+</div>
+
+<div>📦 ${item.result.size}</div>
+<div>🧩 ${item.result.mime}</div>
+
+<div class="urlbox">
+"${item.result.url}",
+</div>
+
+<div class="actions">
+
+<button class="copyBtn"
+onclick="copyFormatted('${item.result.url}')">
+Copy Format
+</button>
+
+<button class="copyBtn"
+onclick="copyRaw('${item.result.url}')">
+Copy URL
+</button>
+
+<a class="openBtn"
+href="${item.result.url}"
+target="_blank">
+Open
+</a>
+
+</div>
+`;
+
+}else{
+
+failedUrls.push(item.original);
+
+card.innerHTML = `
+
+<div class="top">
+<div>
+<b>Error Upload</b>
+</div>
+
+<div class="badge error">
+FAILED
+</div>
+</div>
+
+<div class="urlbox">
+${item.original}
+</div>
+`;
+
+}
+
+results.appendChild(card);
+
+});
+
+if(failedUrls.length > 0){
+autoRetry();
+}
+
+}catch(e){
+
+console.log(e);
+
+status.innerHTML =
+"❌ Error conectando API";
+
+}
+
+}
+
+function renderFormattedBlock(data){
+
+const urls =
+data
+.filter(v=>v.status)
+.map(v=>`"${v.result.url}",`)
+.join("\n");
+
+if(!urls) return;
+
+const div =
+document.createElement("div");
+
+div.className = "card";
+
+div.innerHTML = `
+
+<div class="top">
+<div>
+<b>Formatted URLs</b>
+</div>
+
+<div class="badge">
+READY
+</div>
+</div>
+
+<div class="urlbox" id="allFormatted">
+${urls}
+</div>
+
+<div class="actions">
+
+<button class="copyBtn"
+onclick="copyAllFormatted()">
+Copy All
+</button>
+
+</div>
+`;
+
+document
+.getElementById("results")
+.appendChild(div);
+
+}
+
+async function autoRetry(){
+
+const status =
+document.getElementById("status");
+
+status.innerHTML =
+`⚠️ Reintentando ${failedUrls.length} archivos...`;
+
+try{
+
+const endpoint =
+`${API}?urls=${encodeURIComponent(failedUrls.join(", "))}`;
+
+const res = await fetch(endpoint);
+const data = await res.json();
+
+data.results.forEach(item=>{
+
+if(!item.status) return;
+
+const card =
+document.createElement("div");
+
+card.className = "card";
+
+card.innerHTML = `
+
+<div class="top">
+<div>
+<b>${item.result.name}</b>
+</div>
+
+<div class="badge">
+RE-UPLOADED
+</div>
+</div>
+
+<div class="urlbox">
+"${item.result.url}",
+</div>
+
+<div class="actions">
+
+<button class="copyBtn"
+onclick="copyFormatted('${item.result.url}')">
+Copy Format
+</button>
+
+<a class="openBtn"
+href="${item.result.url}"
+target="_blank">
+Open
+</a>
+
+</div>
+`;
+
+document
+.getElementById("results")
+.appendChild(card);
+
+});
+
+status.innerHTML =
+"✅ Reintento terminado";
+
+}catch(e){
+console.log(e);
+}
+
+}
+
+function retryFailed(){
+
+if(failedUrls.length === 0){
+alert("No hay URLs fallidas");
+return;
+}
+
+autoRetry();
+
+}
+
+function clearAll(){
+
+document.getElementById("urls").value = "";
+document.getElementById("results").innerHTML = "";
+document.getElementById("status").innerHTML = "";
+failedUrls = [];
+
+}
+
+function copyRaw(url){
+
+navigator.clipboard.writeText(url);
+
+alert("URL copiada");
+
+}
+
+function copyFormatted(url){
+
+navigator.clipboard.writeText(`"${url}",`);
+
+alert("Formato copiado");
+
+}
+
+function copyAllFormatted(){
+
+const text =
+document.getElementById("allFormatted").innerText;
+
+navigator.clipboard.writeText(text);
+
+alert("Todas copiadas");
+
+}
+
+</script>
+
+</body>
+</html>
