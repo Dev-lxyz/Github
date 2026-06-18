@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: https://api--shadowcorexyz.replit.app/login
-Disallow: https://api--shadowcorexyz.replit.app/docs
-
-Sitemap: https://api--shadowcorexyz.replit.app/sitemap.xml
